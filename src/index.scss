@@ -1,0 +1,30 @@
+.theme-light {
+  --aboutpage-title-text: #000000;
+  --navbar-text: #000000;
+  --aboutpage--description-text: #151515;
+  --background-color: #ffffff;
+  --utilitypage-title-text: #111111;
+  --utilitypage-description-text: #0a0a0a;
+}
+
+/* --light-text is fine on on the first 3, --dark-text is fine on all of them, --dark-text and dark-background are fine as text on --accent */
+.theme-dark {
+  --aboutpage-title-text: #ffffff;
+  --navbar-text: #ffffff;
+  --aboutpage--description-text: #d5d5d5;
+  --background-color: #000000;
+  --utilitypage-title-text: #ffffff;
+  --utilitypage-description-text: #ffffff;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
