@@ -1,7 +1,9 @@
-import Solana from "./solana.webp"
+import BTC from "./btc.png"
+import ETH from "./eth.png"
 
 const Tokens = {
-  Solana,
+  BTC,
+  ETH,
 }
 
 export default Tokens

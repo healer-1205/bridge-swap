@@ -28,7 +28,7 @@ export const Footer: React.FC = () => {
           </a>
         </div>
         <div className="footer__content__item">
-          <p className="footer__content__item__title">©2022 Looties. All rights reserved.</p>
+          <p className="footer__content__item__title">©2022. All rights reserved.</p>
         </div>
       </Container>
     </div>

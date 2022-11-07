@@ -14,16 +14,12 @@ export const Header: React.FC = () => {
 
   const navLinks = [
     {
-      name: "LEADERBOARD",
-      link: "/leaderboard",
+      name: "Benefit",
+      link: "/benefit",
     },
     {
-      name: "HOW TO OPEN",
-      link: "/howto",
-    },
-    {
-      name: "FAQ",
-      link: "/faq",
+      name: "Review",
+      link: "/review",
     },
   ]
 
@@ -63,9 +59,7 @@ export const Header: React.FC = () => {
                 <img src={svgIcons.twitterIcon} width="30" alt="twitter" />
               </Link>
             </li>
-            <li>
-              <button className="select-btn">SELECT WALLET</button>
-            </li>
+            <li>{/* <button className="select-btn">SELECT WALLET</button> */}</li>
           </ul>
         </Offcanvas.Body>
       </Offcanvas>
@@ -75,7 +69,7 @@ export const Header: React.FC = () => {
             <img width="100px" src={Logos.Logo} alt="Logo" />
           </Link>
         </Col>
-        <Col xs={5} lg={5} style={{ zIndex: 2 }}>
+        <Col xs={5} lg={7} style={{ zIndex: 2 }}>
           <ul className="navbar-li">
             {navLinks.map((nav, index) => {
               return (
@@ -106,12 +100,6 @@ export const Header: React.FC = () => {
               </Link>
             </li>
           </ul>
-        </Col>
-        {/* <Col xs={2} lg={3} className="justify-content-around__switch-btn">
-          <Toggle />
-        </Col> */}
-        <Col xs={1} lg={2} className="btnContainer" style={{ zIndex: 2 }}>
-          <button className="select-btn">SELECT WALLET</button>
         </Col>
         <Col xs={1} className="menu-icon">
           <div onClick={handleShow}>

@@ -85,163 +85,105 @@
     // color: var(--utilitypage-description-text);
     color: #e1d9d9;
   }
-}
 
-.nfts {
-  &__selectBox {
+  &__swapImage {
     width: 100%;
-    cursor: pointer;
-    background: linear-gradient(152.97deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
-    text-align: center;
-    border-radius: 5px;
-    backdrop-filter: blur(42px);
-    justify-content: space-between;
-    color: #fff;
-    height: 50px;
-    appearance: none;
-    option {
-      background-color: #434343;
-      padding: 20px 0px;
-    }
-  }
-
-  &__container {
-    border: 1px solid #434343;
-    padding: 16px;
-    background: linear-gradient(152.97deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
-    border-radius: 10px;
-    backdrop-filter: blur(42px);
-    box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
-    color: #52565c;
-    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-    &__image {
-      width: 100%;
-      overflow: hidden;
-      border-radius: 10px;
-      background-size: cover !important;
-      background-color: #000 !important;
-      background-repeat: no-repeat !important;
-      background-position: center !important;
-    }
-    &__footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding-top: 10px;
-      &__text {
-        color: #fff;
-        padding-left: 20px;
-        font-size: 18px;
-        font-family: "Roboto", sans-serif;
-        font-weight: 300;
-        line-height: 1.334;
-      }
-      &__btn {
-        display: inline-flex;
-        -webkit-box-align: center;
-        align-items: center;
-        -webkit-box-pack: center;
-        justify-content: center;
-        position: relative;
-        box-sizing: border-box;
-        -webkit-tap-highlight-color: transparent;
-        outline: 0px;
-        border: 0px;
-        margin: 0px;
-        cursor: pointer;
-        user-select: none;
-        vertical-align: middle;
-        appearance: none;
-        font-family: Roboto, Helvetica, Arial, sans-serif;
-        font-weight: 500;
-        font-size: 0.875rem;
-        line-height: 1.75;
-        letter-spacing: 0.02857em;
-        text-transform: uppercase;
-        min-width: 64px;
-        padding: 6px 16px;
-        border-radius: 4px;
-        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
-          box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
-          color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-        color: rgb(255, 255, 255);
-        background-color: rgb(25, 118, 210);
-        box-shadow: rgb(0 0 0 / 20%) 0px 3px 1px -2px, rgb(0 0 0 / 14%) 0px 2px 2px 0px,
-          rgb(0 0 0 / 12%) 0px 1px 5px 0px;
-        background: linear-gradient(275.68deg, #b386fe 5.91%, #92cfeb 50.2%, #a7fe89 101.53%);
-        height: 45px;
-      }
-      &__btn:hover {
-        text-decoration: none;
-        background-color: rgb(21, 101, 192);
-        box-shadow: rgb(0 0 0 / 20%) 0px 2px 4px -1px, rgb(0 0 0 / 14%) 0px 4px 5px 0px,
-          rgb(0 0 0 / 12%) 0px 1px 10px 0px;
-        color: #292929;
-        border-radius: 10px;
-      }
-    }
+    height: auto;
   }
 }
 
-.responsibly {
-  text-align: center;
-  padding-top: 20px;
-  color: #b18cfd;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 25px;
+.swapBox {
+  padding: 20px;
+  background-color: rgba($color: #ffffff, $alpha: 0.1);
+  border-radius: 20px;
   font-family: "Roboto", sans-serif;
-}
 
-.recent {
-  color: #ffffff;
-  padding: 50px 0px;
-  text-align: center;
-  font-size: 30px;
-  font-family: Arial;
-  font-weight: 500;
-  line-height: 1.2;
-}
+  &__exchangeInput {
+    padding: 14px 9px;
+    width: 100%;
+    background: hsla(0, 0%, 100%, 0.03);
+    border: 1px solid #34344c;
+    border-radius: 10px;
+    position: relative;
 
-.infoContainer {
-  border: 1px solid #606060;
-  cursor: pointer;
-  display: flex;
-  padding: 15px;
-  position: relative;
-  background: linear-gradient(152.97deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
-  border-radius: 1rem;
-  backdrop-filter: blur(42px);
-  justify-content: space-between;
-
-  &__info {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    &__img {
-      margin-right: 1rem;
-      border-radius: 50%;
-    }
-    &__title {
+    input {
+      width: 40%;
+      background-color: initial;
+      border: none;
       color: #ffffff;
-      font-size: 16px;
-      font-family: "Poppins", sans-serif;
-      font-weight: 300;
-      line-height: 1.6;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 180%;
+      outline: none;
+    }
+
+    &__dropdown {
+      width: 60%;
+      border-left: 1px solid #ffffff;
+      cursor: pointer;
+      padding-left: 4px;
+      position: relative;
+
+      .downArrow {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #ffffff;
+      }
+
+      &__selected {
+        align-items: center;
+        color: #ffffff;
+        display: flex;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 180%;
+
+        img {
+          border-radius: 50%;
+          height: 41px;
+          width: 41px;
+          margin-right: 10px;
+          object-fit: contain;
+        }
+
+        h6 {
+          color: #ffffff;
+          font-size: 20px;
+          font-weight: 500;
+          line-height: 120%;
+        }
+
+        span {
+          color: #ffffff;
+          font-size: 12px;
+          font-weight: 500;
+          line-height: 100%;
+          opacity: 0.3;
+        }
+      }
     }
   }
+}
 
-  &__time {
-    color: #a8a4a4;
-    right: 10px;
-    bottom: 5px;
-    position: absolute;
-    font-size: 12px;
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    line-height: 1.5;
-  }
+.swapImage {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  cursor: pointer;
+}
+
+.addressInput {
+  width: 100%;
+  background-color: initial;
+  border: 1px solid #34344c;
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 180%;
+  outline: none;
 }
 
 @media only screen and (max-width: 768px) {
@@ -255,8 +197,5 @@
       font-size: 20px;
       line-height: 30px;
     }
-  }
-  .btnContainer {
-    display: none;
   }
 }

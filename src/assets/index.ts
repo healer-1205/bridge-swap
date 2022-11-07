@@ -1,6 +1,6 @@
 import Logos from "./logos"
 import svgIcons from "./svgs"
-import NFTs from "./nfts"
 import Tokens from "./tokens"
+import Gifs from "./gifs"
 
-export { Logos, svgIcons, NFTs, Tokens }
+export { Logos, svgIcons, Tokens, Gifs }

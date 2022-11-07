@@ -28,6 +28,23 @@
   color: #61dafb;
 }
 
+.custom_button {
+  width: 100%;
+  background-color: #243fe2;
+  border: none;
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 180%;
+  outline: none;
+  padding: 17px 0px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
