@@ -1,9 +1,11 @@
 import React from "react"
 import { Col, Container, Row } from "react-bootstrap"
+import { useTranslation } from "react-i18next"
 import { svgIcons, Images } from "../../assets"
 import "./Benefit.scss"
 
 export const Benefit: React.FC = () => {
+  const { t } = useTranslation("translation")
   return (
     <div className="benefit" id="benefit">
       <Container>
@@ -12,7 +14,7 @@ export const Benefit: React.FC = () => {
             <div className="benefit__box">
               <Row>
                 <Col>
-                  <h1>Your Best Ctypro Exchange</h1>
+                  <h1>{t("homepage.your-best-crypto-exchange")}</h1>
                 </Col>
               </Row>
               <Row className="pt-60">
@@ -21,24 +23,24 @@ export const Benefit: React.FC = () => {
                     <img src={svgIcons.OneNumber} alt="OneNumber" />
                     <img src={svgIcons.RightArrow} alt="RightArrow" style={{ marginLeft: "10px" }} />
                   </div>
-                  <p className="font-25 pt-20">Choose currency</p>
-                  <p>Pick one of 50 000+ supported currency pairs from the list</p>
+                  <p className="font-25 pt-20">{t("homepage.choose-currency")}</p>
+                  <p>{t("homepage.choose-currency-description")}</p>
                 </Col>
                 <Col sm={12} md={4} lg={4}>
                   <div className="imageContainer">
                     <img src={svgIcons.TwoNumber} alt="TwoNumber" />
                     <img src={svgIcons.RightArrow} alt="RightArrow" style={{ marginLeft: "10px" }} />
                   </div>
-                  <p className="font-25 pt-20">Make Deposit</p>
-                  <p>Confirm details and send your assets to the generated address</p>
+                  <p className="font-25 pt-20">{t("homepage.make-deposit")}</p>
+                  <p>{t("homepage.make-deposit-description")}</p>
                 </Col>
                 <Col sm={12} md={4} lg={4}>
                   <div className="imageContainer">
                     <img src={svgIcons.ThreeNumber} alt="ThreeNumber" />
                     <img src={svgIcons.DoubleCheck} alt="DoubleCheck" style={{ marginLeft: "10px" }} />
                   </div>
-                  <p className="font-25 pt-20">Get your coins</p>
-                  <p>Receive exchanged crypto with the best possible rate</p>
+                  <p className="font-25 pt-20">{t("homepage.get-your-coins")}</p>
+                  <p>{t("homepage.get-your-coins-description")}</p>
                 </Col>
               </Row>
             </div>
@@ -49,10 +51,8 @@ export const Benefit: React.FC = () => {
             <div className="benefit__box">
               <Row>
                 <Col sm={12} md={8}>
-                  <h1 className="pt-20">Fast Crypto Exchange</h1>
-                  <p className="pt-60 font-25">
-                    The average time for exchange is about 5 minutes. You can track the progress on the exchange page.
-                  </p>
+                  <h1 className="pt-20">{t("homepage.fast-crypto-exchange")}</h1>
+                  <p className="pt-60 font-25">{t("homepage.fast-crypto-exchange-description")}</p>
                 </Col>
                 <Col sm={12} md={4}>
                   <img src={Images.Fast} alt="Fast" className="benefit__image" />
@@ -65,14 +65,12 @@ export const Benefit: React.FC = () => {
           <Col>
             <div className="benefit__box">
               <Row>
+                <Col sm={12} md={8}>
+                  <h1 className="responsive-padding">{t("homepage.limitless-exchange")}</h1>
+                  <p className="responsive-padding font-25">{t("homepage.limitless-exchange-description")}</p>
+                </Col>
                 <Col sm={12} md={4}>
                   <img src={Images.Limitless} alt="Limitless" className="benefit__image" />
-                </Col>
-                <Col sm={12} md={8}>
-                  <h1 className="responsive-padding">Limitless Exchange</h1>
-                  <p className="responsive-padding font-25">
-                    You can start from less than $2 and swap as much crypto as you want – there is no upper limit.
-                  </p>
                 </Col>
               </Row>
             </div>
@@ -83,8 +81,8 @@ export const Benefit: React.FC = () => {
             <div className="benefit__box">
               <Row>
                 <Col sm={12} md={8}>
-                  <h1 className="responsive-padding">Save Money</h1>
-                  <p className="responsive-padding font-25">Best exchange rates and minimum commissions.</p>
+                  <h1 className="responsive-padding">{t("homepage.save-money")}</h1>
+                  <p className="responsive-padding font-25">{t("homepage.save-money-description")}</p>
                 </Col>
                 <Col sm={12} md={4}>
                   <img src={Images.Save} alt="Save" className="benefit__image" />

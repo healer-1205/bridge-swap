@@ -1,8 +1,10 @@
 import React from "react"
 import { Col, Container, Row } from "react-bootstrap"
+import { useTranslation } from "react-i18next"
 import "./Faq.scss"
 
 export const Faq: React.FC = () => {
+  const { t } = useTranslation("translation")
   return (
     <div className="faq" id="faq">
       <Container>
@@ -14,27 +16,20 @@ export const Faq: React.FC = () => {
         <Row className="pt-20">
           <Col sm={12} md={4} className="pt-20">
             <div className="faq__box">
-              <h5>What is my sending address and my receiving address?</h5>
-              <p>
-                Your sending address is the address that you will use to send your crypto. Your receiving address will
-                be the address you want to receive your crypto on.
-              </p>
+              <h5>{t("faq.faq1-question")}</h5>
+              <p>{t("faq.faq1-answer")}</p>
             </div>
           </Col>
           <Col sm={12} md={4} className="pt-20">
             <div className="faq__box">
-              <h5>Does this guarantee my anonymity and untraceability?</h5>
-              <p>
-                YES. We allow our users to trade their crypto without revealing their identity or being tracked on the
-                blockchain. The swap won’t be traceable and you will receive your funds from a legitimate risk-free
-                source.
-              </p>
+              <h5>{t("faq.faq2-question")}</h5>
+              <p>{t("faq.faq2-answer")}</p>
             </div>
           </Col>
           <Col sm={12} md={4} className="pt-20">
             <div className="faq__box">
-              <h5>Will Titanex ever block or freeze my funds?</h5>
-              <p>Titanex will never block, freeze or restrict your funds.</p>
+              <h5>{t("faq.faq3-question")}</h5>
+              <p>{t("faq.faq3-question")}</p>
             </div>
           </Col>
         </Row>

@@ -24,6 +24,14 @@
 		"save-money": "Save Money",
 		"save-money-description": "Best exchange rates and minimum commissions."
 	},
+	"faq": {
+		"faq1-question": "What is my sending address and my receiving address?",
+		"faq1-answer": "Your sending address is the address that you will use to send your crypto. Your receiving address will be the address you want to receive your crypto on.",
+		"faq2-question": "Does this guarantee my anonymity and untraceability?",
+		"faq2-answer": "YES. We allow our users to trade their crypto without revealing their identity or being tracked on the blockchain. The swap won’t be traceable and you will receive your funds from a legitimate risk-free source.",
+		"faq3-question": "Will Titanex ever block or freeze my funds?",
+		"faq3-answer": "Titanex will never block, freeze or restrict your funds."
+	},
 	"footer": {
 		"copyright": "©2022. All rights reserved."
 	}

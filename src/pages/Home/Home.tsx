@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { Col, Container, Row } from "react-bootstrap"
+import { useTranslation } from "react-i18next"
 import { Tokens, svgIcons, Gifs } from "../../assets"
 import { Benefit } from "../../components/Benefit"
 import { Faq } from "../../components/Faq"
@@ -8,6 +9,7 @@ import "./Home.scss"
 export const Home: React.FC = () => {
   const [isSendOpen, setIsSendOpen] = useState(false)
   const [isReceiveOpen, setIsReceiveOpen] = useState(false)
+  const { t } = useTranslation("translation")
   return (
     <div className="home">
       <div className="home__gradient1"></div>
@@ -17,7 +19,7 @@ export const Home: React.FC = () => {
       <Container style={{ maxWidth: "960px" }}>
         <Row>
           <Col xs={12} md={12} lg={12}>
-            <p className="home__title">Swap your favorite CRYPTO without KYC</p>
+            <p className="home__title">{t("homepage.main-title")}</p>
           </Col>
         </Row>
       </Container>
@@ -30,7 +32,7 @@ export const Home: React.FC = () => {
             <div className="swapBox">
               <Row>
                 <Col>
-                  <p className="text-white">Your Send</p>
+                  <p className="text-white">{t("homepage.your-send")}</p>
                   <div className="swapBox__exchangeInput d-flex align-items-center">
                     <input type="number" placeholder="0" />
                     <div
@@ -66,7 +68,7 @@ export const Home: React.FC = () => {
                   <img src={svgIcons.Swap} alt="Swap" className="swapImage" />
                 </Col>
                 <Col>
-                  <p className="text-white">Your receive</p>
+                  <p className="text-white">{t("homepage.your-receive")}</p>
                   <div className="swapBox__exchangeInput d-flex align-items-center">
                     <input type="number" placeholder="0" />
                     <div
@@ -107,7 +109,7 @@ export const Home: React.FC = () => {
               <Row>
                 <Col sm={0} md={2} lg={3}></Col>
                 <Col sm={12} md={8} lg={6}>
-                  <button className="custom_button mt-20">Swap Now</button>
+                  <button className="custom_button mt-20">{t("homepage.swap-now")}</button>
                 </Col>
                 <Col sm={0} md={2} lg={3}></Col>
               </Row>
