@@ -22,9 +22,6 @@ export const Home: React.FC = () => {
         </Row>
       </Container>
       <Container>
-        <span className="home__description">Fixed rate 0.1%.</span>
-      </Container>
-      <Container>
         <Row>
           <Col sm={12} md={1} lg={3}>
             <img src={Gifs.Bitcoin2} alt="Bitcoin" className="home__swapImage" />
