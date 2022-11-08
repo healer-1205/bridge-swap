@@ -1,0 +1,14 @@
+.faq {
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  &__box {
+    padding: 20px;
+    background-color: rgba($color: #ffffff, $alpha: 0.2);
+    border-radius: 20px;
+    height: 100%;
+
+    h5 {
+      color: aquamarine;
+    }
+  }
+}

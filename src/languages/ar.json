@@ -1,0 +1,30 @@
+{
+	"navbar": {
+		"benefit": "المنفعة",
+		"faq": "التعليمات",
+		"support": "الدعم",
+		"language": "عربي"
+	},
+	"homepage": {
+		"main-title": "قم بتبديل CRYPTO المفضل لديك بدون KYC",
+		"your-send": "إرسالك",
+		"your-receive": "تلقيك",
+		"swap-now": "مبادلة الآن",
+		"your-best-crypto-exchange": "أفضل تبادل تشفير خاص بك",
+		"choose-currency": "اختر العملة",
+		"choose-currency-description": "اختر واحدًا من أكثر من 50000 زوج عملات مدعوم من القائمة",
+		"make-deposit": "جعل الودائع",
+		"make-deposit-description": "قم بتأكيد التفاصيل وإرسال الأصول الخاصة بك إلى العنوان الذي تم إنشاؤه",
+		"get-your-coins": "احصل على عملاتك المعدنية",
+		"get-your-coins-description": "احصل على العملات المشفرة المتبادلة بأفضل سعر ممكن",
+		"fast-crypto-exchange": "تبادل التشفير السريع",
+		"fast-crypto-exchange-description": "متوسط وقت التبادل حوالي 5 دقائق. يمكنك تتبع التقدم على صفحة التبادل.",
+		"limitless-exchange": "صرف غير محدود",
+		"limitless-exchange-description": "يمكنك البدء من أقل من 2 دولار ومبادلة قدر ما تريد من العملات المشفرة - لا يوجد حد أعلى.",
+		"save-money": "وفر المال",
+		"save-money-description": "أفضل أسعار الصرف والحد الأدنى للعمولات."
+	},
+	"footer": {
+		"copyright": "©2022. كل الحقوق محفوظة."
+	}
+}

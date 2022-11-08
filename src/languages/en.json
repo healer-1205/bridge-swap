@@ -1,0 +1,30 @@
+{
+	"navbar": {
+		"benefit": "Benefit",
+		"faq": "FAQ",
+		"support": "Support",
+		"language": "English"
+	},
+	"homepage": {
+		"main-title": "Swap your favorite CRYPTO without KYC",
+		"your-send": "Your Send",
+		"your-receive": "Your receive",
+		"swap-now": "Swap Now",
+		"your-best-crypto-exchange": "Your Best Crypto Exchange",
+		"choose-currency": "Choose currency",
+		"choose-currency-description": "Pick one of 50 000+ supported currency pairs from the list",
+		"make-deposit": "Make Deposit",
+		"make-deposit-description": "Confirm details and send your assets to the generated address",
+		"get-your-coins": "Get your coins",
+		"get-your-coins-description": "Receive exchanged crypto with the best possible rate",
+		"fast-crypto-exchange": "Fast Crypto Exchange",
+		"fast-crypto-exchange-description": "The average time for exchange is about 5 minutes. You can track the progress on the exchange page.",
+		"limitless-exchange": "Limitless Exchange",
+		"limitless-exchange-description": "You can start from less than $2 and swap as much crypto as you want – there is no upper limit.",
+		"save-money": "Save Money",
+		"save-money-description": "Best exchange rates and minimum commissions."
+	},
+	"footer": {
+		"copyright": "©2022. All rights reserved."
+	}
+}

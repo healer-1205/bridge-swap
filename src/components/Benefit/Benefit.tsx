@@ -49,7 +49,7 @@ export const Benefit: React.FC = () => {
             <div className="benefit__box">
               <Row>
                 <Col sm={12} md={8}>
-                  <h1 className="pt-20">Fast Ctypro Exchange</h1>
+                  <h1 className="pt-20">Fast Crypto Exchange</h1>
                   <p className="pt-60 font-25">
                     The average time for exchange is about 5 minutes. You can track the progress on the exchange page.
                   </p>
@@ -71,7 +71,7 @@ export const Benefit: React.FC = () => {
                 <Col sm={12} md={8}>
                   <h1 className="responsive-padding">Limitless Exchange</h1>
                   <p className="responsive-padding font-25">
-                    The average time for exchange is about 5 minutes. You can track the progress on the exchange page.
+                    You can start from less than $2 and swap as much crypto as you want – there is no upper limit.
                   </p>
                 </Col>
               </Row>

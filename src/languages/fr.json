@@ -1,0 +1,30 @@
+{
+	"navbar": {
+		"benefit": "Bénéficier à",
+		"faq": "FAQ",
+		"support": "Soutien",
+		"language": "Français"
+	},
+	"homepage": {
+		"main-title": "Échangez votre CRYPTO préféré sans KYC",
+		"your-send": "Votre envoi",
+		"your-receive": "Votre réception",
+		"swap-now": "Échangez maintenant",
+		"your-best-crypto-exchange": "Votre meilleur échange de crypto",
+		"choose-currency": "Choisir la devise",
+		"choose-currency-description": "Choisissez l'une des 50 000+ paires de devises prises en charge dans la liste",
+		"make-deposit": "Faire un dépôt",
+		"make-deposit-description": "Confirmez les détails et envoyez vos actifs à l'adresse générée",
+		"get-your-coins": "Obtenez vos pièces",
+		"get-your-coins-description": "Recevez la crypto échangée au meilleur taux possible",
+		"fast-crypto-exchange": "Échange cryptographique rapide",
+		"fast-crypto-exchange-description": "Le temps moyen d'échange est d'environ 5 minutes. Vous pouvez suivre la progression sur la page d'échange.",
+		"limitless-exchange": "Échange illimité",
+		"limitless-exchange-description": "Vous pouvez commencer à partir de moins de 2 $ et échanger autant de crypto que vous le souhaitez - il n'y a pas de limite supérieure.",
+		"save-money": "Économiser de l'argent",
+		"save-money-description": "Meilleurs taux de change et commissions minimales."
+	},
+	"footer": {
+		"copyright": "©2022. Tous les droits sont réservés."
+	}
+}

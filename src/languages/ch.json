@@ -1,0 +1,30 @@
+{
+	"navbar": {
+		"benefit": "益處",
+		"faq": "常問問題",
+		"support": "支持",
+		"language": "漢語"
+	},
+	"homepage": {
+		"main-title": "在沒有 KYC 的情況下交換您最喜歡的 CRYPTO",
+		"your-send": "您的發送",
+		"your-receive": "你收到",
+		"swap-now": "立即兌換",
+		"your-best-crypto-exchange": "您最好的加密貨幣交易所",
+		"choose-currency": "選擇貨幣",
+		"choose-currency-description": "從列表中選擇 50 000 多種受支持的貨幣對之一",
+		"make-deposit": "存款",
+		"make-deposit-description": "確認詳細信息並將您的資產發送到生成的地址",
+		"get-your-coins": "獲取你的硬幣",
+		"get-your-coins-description": "以最優惠的價格接收交換的加密貨幣",
+		"fast-crypto-exchange": "快速加密交換",
+		"fast-crypto-exchange-description": "平均交換時間約為 5 分鐘。 您可以在交換頁面上跟踪進度。",
+		"limitless-exchange": "無限交換",
+		"limitless-exchange-description": "您可以從不到 2 美元開始，並根據需要交換盡可能多的加密貨幣——沒有上限。",
+		"save-money": "存錢",
+		"save-money-description": "最佳匯率和最低佣金。"
+	},
+	"footer": {
+		"copyright": "©2022. 版權所有。"
+	}
+}

@@ -17,7 +17,7 @@ export const Home: React.FC = () => {
       <Container style={{ maxWidth: "960px" }}>
         <Row>
           <Col xs={12} md={12} lg={12}>
-            <p className="home__title">Swap your favorite CTYPTO without KYC</p>
+            <p className="home__title">Swap your favorite CRYPTO without KYC</p>
           </Col>
         </Row>
       </Container>
