@@ -1,9 +1,11 @@
-import React from "react"
+import React, { useState } from "react"
 import { Col, Container, Row } from "react-bootstrap"
 import { Tokens, svgIcons, Gifs } from "../../assets"
 import "./Home.scss"
 
 export const Home: React.FC = () => {
+  const [isSendOpen, setIsSendOpen] = useState(false)
+  const [isReceiveOpen, setIsReceiveOpen] = useState(false)
   return (
     <div className="home">
       <div className="home__gradient1"></div>
@@ -32,7 +34,24 @@ export const Home: React.FC = () => {
                   <p className="text-white">Your Send</p>
                   <div className="swapBox__exchangeInput d-flex align-items-center">
                     <input type="number" placeholder="0" />
-                    <div className="swapBox__exchangeInput__dropdown">
+                    <div
+                      className="swapBox__exchangeInput__dropdown"
+                      onMouseEnter={(e) => {
+                        e.preventDefault()
+                        setIsSendOpen(true)
+                      }}
+                      onMouseLeave={(e) => {
+                        e.preventDefault()
+                        setIsSendOpen(false)
+                      }}
+                    >
+                      <div className={isSendOpen ? "send_dropdown_content" : "send_dropdown_content d-none"}>
+                        <div className="exchange_search">
+                          <img src={svgIcons.Search} alt="Search" />
+                          <input type="text" placeholder="Enter token name" />
+                        </div>
+                        <div className="exchange_options"></div>
+                      </div>
                       <img src={svgIcons.DownArrow} alt="DownArrow" className="downArrow" />
                       <div className="swapBox__exchangeInput__dropdown__selected">
                         <img src={Tokens.BTC} alt="BTC" />
@@ -51,7 +70,24 @@ export const Home: React.FC = () => {
                   <p className="text-white">Your receive</p>
                   <div className="swapBox__exchangeInput d-flex align-items-center">
                     <input type="number" placeholder="0" />
-                    <div className="swapBox__exchangeInput__dropdown">
+                    <div
+                      className="swapBox__exchangeInput__dropdown"
+                      onMouseEnter={(e) => {
+                        e.preventDefault()
+                        setIsReceiveOpen(true)
+                      }}
+                      onMouseLeave={(e) => {
+                        e.preventDefault()
+                        setIsReceiveOpen(false)
+                      }}
+                    >
+                      <div className={isReceiveOpen ? "receive_dropdown_content" : "receive_dropdown_content d-none"}>
+                        <div className="exchange_search">
+                          <img src={svgIcons.Search} alt="Search" />
+                          <input type="text" placeholder="Enter token name" />
+                        </div>
+                        <div className="exchange_options"></div>
+                      </div>
                       <img src={svgIcons.DownArrow} alt="DownArrow" className="downArrow" />
                       <div className="swapBox__exchangeInput__dropdown__selected">
                         <img src={Tokens.ETH} alt="BTC" />
