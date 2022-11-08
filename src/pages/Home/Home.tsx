@@ -23,7 +23,7 @@ export const Home: React.FC = () => {
           </Col>
         </Row>
       </Container>
-      <Container>
+      <Container className="swapbox_container">
         <Row>
           <Col sm={12} md={1} lg={3}>
             <img src={Gifs.Bitcoin2} alt="Bitcoin" className="home__swapImage" />

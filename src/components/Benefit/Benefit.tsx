@@ -17,7 +17,7 @@ export const Benefit: React.FC = () => {
                   <h1>{t("homepage.your-best-crypto-exchange")}</h1>
                 </Col>
               </Row>
-              <Row className="pt-60">
+              <Row className="pt-60 pb-40">
                 <Col sm={12} md={4} lg={4}>
                   <div className="imageContainer">
                     <img src={svgIcons.OneNumber} alt="OneNumber" />
@@ -46,7 +46,7 @@ export const Benefit: React.FC = () => {
             </div>
           </Col>
         </Row>
-        <Row className="pt-120">
+        <Row className="pt-60">
           <Col>
             <div className="benefit__box">
               <Row>
@@ -61,7 +61,7 @@ export const Benefit: React.FC = () => {
             </div>
           </Col>
         </Row>
-        <Row className="pt-120">
+        <Row className="pt-40">
           <Col>
             <div className="benefit__box">
               <Row>
@@ -76,7 +76,7 @@ export const Benefit: React.FC = () => {
             </div>
           </Col>
         </Row>
-        <Row className="pt-120">
+        <Row className="pt-40">
           <Col>
             <div className="benefit__box">
               <Row>

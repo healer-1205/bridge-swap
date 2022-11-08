@@ -64,6 +64,7 @@
       rgb(39 121 124 / 72%) 95.78%
     );
   }
+
   &__title {
     font-family: "Press Start 2P", cursive;
     font-weight: 700;
@@ -305,6 +306,10 @@
   padding: 10px;
 }
 
+.swapbox_container {
+  padding-top: 60px;
+}
+
 @media only screen and (max-width: 1400px) {
   .swapBox__exchangeInput__dropdown__selected h6 {
     font-size: 12px;
@@ -346,5 +351,9 @@
   }
   .swapBox__exchangeInput__dropdown__selected h6 {
     font-size: 20px;
+  }
+
+  .swapbox_container {
+    padding-top: 20px;
   }
 }
