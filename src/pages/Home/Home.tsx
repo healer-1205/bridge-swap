@@ -24,10 +24,10 @@ export const Home: React.FC = () => {
       </Container>
       <Container>
         <Row>
-          <Col sm={12} md={3} lg={3}>
+          <Col sm={12} md={1} lg={3}>
             <img src={Gifs.Bitcoin2} alt="Bitcoin" className="home__swapImage" />
           </Col>
-          <Col sm={12} md={6} lg={6}>
+          <Col sm={12} md={10} lg={6}>
             <div className="swapBox">
               <Row>
                 <Col>
@@ -106,15 +106,15 @@ export const Home: React.FC = () => {
                 </Col>
               </Row>
               <Row>
-                <Col></Col>
-                <Col>
+                <Col sm={0} md={2} lg={3}></Col>
+                <Col sm={12} md={8} lg={6}>
                   <button className="custom_button mt-20">Swap Now</button>
                 </Col>
-                <Col></Col>
+                <Col sm={0} md={2} lg={3}></Col>
               </Row>
             </div>
           </Col>
-          <Col sm={12} md={3} lg={3}>
+          <Col sm={12} md={1} lg={3}>
             <img src={Gifs.BNB} alt="Bitcoin" className="home__swapImage" />
           </Col>
         </Row>

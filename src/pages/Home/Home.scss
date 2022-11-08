@@ -305,7 +305,23 @@
   padding: 10px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1400px) {
+  .swapBox__exchangeInput__dropdown__selected h6 {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .swapBox__exchangeInput__dropdown__selected img {
+    width: 20px;
+    height: 20px;
+  }
+  .swapBox__exchangeInput__dropdown__selected h6 {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
   .home {
     padding: 60px 10px 20px 10px;
     &__title {
@@ -316,5 +332,20 @@
       font-size: 20px;
       line-height: 30px;
     }
+    &__swapImage {
+      display: none;
+    }
+  }
+
+  .swapImage {
+    display: none;
+  }
+
+  .swapBox__exchangeInput__dropdown__selected img {
+    width: 40px;
+    height: 40px;
+  }
+  .swapBox__exchangeInput__dropdown__selected h6 {
+    font-size: 20px;
   }
 }
