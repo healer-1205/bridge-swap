@@ -15,11 +15,11 @@ export const Header: React.FC = () => {
   const navLinks = [
     {
       name: "Benefit",
-      link: "/benefit",
+      link: "#benefit",
     },
     {
-      name: "Review",
-      link: "/review",
+      name: "FAQ",
+      link: "#faq",
     },
   ]
 
@@ -34,13 +34,16 @@ export const Header: React.FC = () => {
             {navLinks.map((nav, index) => {
               return (
                 <li key={index}>
-                  <Link
-                    to={nav.link}
+                  <a
+                    href={nav.link}
                     className={activeIndex === index ? "cool-link active" : "cool-link"}
-                    onClick={() => setActiveIndex(index)}
+                    onClick={(e) => {
+                      e.preventDefault()
+                      setActiveIndex(index)
+                    }}
                   >
                     {nav.name}
-                  </Link>
+                  </a>
                 </li>
               )
             })}
@@ -74,13 +77,16 @@ export const Header: React.FC = () => {
             {navLinks.map((nav, index) => {
               return (
                 <li key={index}>
-                  <Link
-                    to={nav.link}
+                  <a
+                    href={nav.link}
                     className={activeIndex === index ? "cool-link active" : "cool-link"}
-                    onClick={() => setActiveIndex(index)}
+                    onClick={(e) => {
+                      e.preventDefault()
+                      setActiveIndex(index)
+                    }}
                   >
                     {nav.name}
-                  </Link>
+                  </a>
                 </li>
               )
             })}
