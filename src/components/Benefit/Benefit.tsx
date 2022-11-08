@@ -69,8 +69,8 @@ export const Benefit: React.FC = () => {
                   <img src={Images.Limitless} alt="Limitless" className="benefit__image" />
                 </Col>
                 <Col sm={12} md={8}>
-                  <h1 className="pt-60">Limitless Exchange</h1>
-                  <p className="pt-60 font-25">
+                  <h1 className="responsive-padding">Limitless Exchange</h1>
+                  <p className="responsive-padding font-25">
                     The average time for exchange is about 5 minutes. You can track the progress on the exchange page.
                   </p>
                 </Col>
@@ -83,8 +83,8 @@ export const Benefit: React.FC = () => {
             <div className="benefit__box">
               <Row>
                 <Col sm={12} md={8}>
-                  <h1 className="pt-60">Save Money</h1>
-                  <p className="pt-60 font-25">Best exchange rates and minimum commissions.</p>
+                  <h1 className="responsive-padding">Save Money</h1>
+                  <p className="responsive-padding font-25">Best exchange rates and minimum commissions.</p>
                 </Col>
                 <Col sm={12} md={4}>
                   <img src={Images.Save} alt="Save" className="benefit__image" />
