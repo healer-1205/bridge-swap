@@ -38,7 +38,6 @@ export const Header: React.FC = () => {
                     href={nav.link}
                     className={activeIndex === index ? "cool-link active" : "cool-link"}
                     onClick={(e) => {
-                      e.preventDefault()
                       setActiveIndex(index)
                     }}
                   >
@@ -81,7 +80,6 @@ export const Header: React.FC = () => {
                     href={nav.link}
                     className={activeIndex === index ? "cool-link active" : "cool-link"}
                     onClick={(e) => {
-                      e.preventDefault()
                       setActiveIndex(index)
                     }}
                   >

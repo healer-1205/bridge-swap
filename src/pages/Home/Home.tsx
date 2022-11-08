@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { Col, Container, Row } from "react-bootstrap"
 import { Tokens, svgIcons, Gifs } from "../../assets"
 import { Benefit } from "../../components/Benefit"
+import { Faq } from "../../components/Faq"
 import "./Home.scss"
 
 export const Home: React.FC = () => {
@@ -121,6 +122,7 @@ export const Home: React.FC = () => {
         </Row>
       </Container>
       <Benefit />
+      <Faq />
     </div>
   )
 }
