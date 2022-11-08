@@ -25,12 +25,12 @@
 		"save-money-description": "Meilleurs taux de change et commissions minimales."
 	},
 	"faq": {
-		"faq1-question": "What is my sending address and my receiving address?",
-		"faq1-answer": "Your sending address is the address that you will use to send your crypto. Your receiving address will be the address you want to receive your crypto on.",
-		"faq2-question": "Does this guarantee my anonymity and untraceability?",
-		"faq2-answer": "YES. We allow our users to trade their crypto without revealing their identity or being tracked on the blockchain. The swap won’t be traceable and you will receive your funds from a legitimate risk-free source.",
-		"faq3-question": "Will Titanex ever block or freeze my funds?",
-		"faq3-answer": "Titanex will never block, freeze or restrict your funds."
+		"faq1-question": "Quelle est mon adresse d'envoi et mon adresse de réception ?",
+		"faq1-answer": "Votre adresse d'envoi est l'adresse que vous utiliserez pour envoyer votre crypto. Votre adresse de réception sera l'adresse sur laquelle vous souhaitez recevoir votre crypto.",
+		"faq2-question": "Cela garantit-il mon anonymat et mon introuvabilité ?",
+		"faq2-answer": "OUI. Nous permettons à nos utilisateurs d'échanger leur crypto sans révéler leur identité ni être suivis sur la blockchain. L'échange ne sera pas traçable et vous recevrez vos fonds d'une source légitime sans risque.",
+		"faq3-question": "Titanex bloquera-t-il ou gèlera-t-il mes fonds ?",
+		"faq3-answer": "Titanex ne bloquera, ne gèlera ou ne limitera jamais vos fonds."
 	},
 	"footer": {
 		"copyright": "©2022. Tous les droits sont réservés."

@@ -25,12 +25,12 @@
 		"save-money-description": "Лучшие курсы обмена и минимальные комиссии."
 	},
 	"faq": {
-		"faq1-question": "What is my sending address and my receiving address?",
-		"faq1-answer": "Your sending address is the address that you will use to send your crypto. Your receiving address will be the address you want to receive your crypto on.",
-		"faq2-question": "Does this guarantee my anonymity and untraceability?",
-		"faq2-answer": "YES. We allow our users to trade their crypto without revealing their identity or being tracked on the blockchain. The swap won’t be traceable and you will receive your funds from a legitimate risk-free source.",
-		"faq3-question": "Will Titanex ever block or freeze my funds?",
-		"faq3-answer": "Titanex will never block, freeze or restrict your funds."
+		"faq1-question": "Каков мой адрес отправки и мой адрес получения?",
+		"faq1-answer": "Ваш адрес отправки — это адрес, который вы будете использовать для отправки криптовалюты. Ваш адрес получения будет адресом, на который вы хотите получить свою криптовалюту.",
+		"faq2-question": "Гарантирует ли это мою анонимность и невозможность отслеживания?",
+		"faq2-answer": "ДА. Мы позволяем нашим пользователям торговать своей криптовалютой, не раскрывая свою личность и не отслеживая их в блокчейне. Своп нельзя будет отследить, и вы получите свои средства из законного источника без риска.",
+		"faq3-question": "Будет ли Titanex когда-либо блокировать или замораживать мои средства?",
+		"faq3-answer": "Titanex никогда не будет блокировать, замораживать или ограничивать ваши средства."
 	},
 	"footer": {
 		"copyright": "©2022. Все права защищены."
