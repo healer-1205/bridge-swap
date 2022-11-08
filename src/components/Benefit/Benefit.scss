@@ -19,3 +19,9 @@
     width: 100%;
   }
 }
+
+@media only screen and (max-width: 992px) {
+  .pt-120 {
+    padding-top: 20px !important;
+  }
+}
