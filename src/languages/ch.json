@@ -22,7 +22,9 @@
 		"limitless-exchange": "无限交换",
 		"limitless-exchange-description": "您可以从不到 2 美元开始，并根据需要交换尽可能多的加密货币——没有上限。",
 		"save-money": "存钱",
-		"save-money-description": "最佳汇率和最低佣金。"
+		"save-money-description": "最佳汇率和最低佣金。",
+		"get-in-touch": "保持联系",
+		"submit": "提交"
 	},
 	"faq": {
 		"faq1-question": "我的发送地址和接收地址是什么？",

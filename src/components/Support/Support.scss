@@ -1,0 +1,57 @@
+.support {
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+
+  .responsive-padding {
+    padding-top: 40px;
+
+    .support-input {
+      width: 100%;
+      background-color: initial;
+      border: 1px solid #34344c;
+      border-radius: 10px;
+      color: #ffffff;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 180%;
+      outline: none;
+      padding: 10px;
+    }
+
+    .support-area {
+      width: 100%;
+      background-color: initial;
+      border: 1px solid #34344c;
+      border-radius: 10px;
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 500;
+      outline: none;
+      padding: 10px;
+    }
+
+    .support-button {
+      width: 100%;
+      background-color: #243fe2;
+      border: none;
+      border-radius: 10px;
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 180%;
+      outline: none;
+      padding: 10px 0px;
+      transition: 0.3s;
+      &:hover {
+        background-color: #243fe2;
+        opacity: 0.6;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .support .responsive-padding {
+    padding-top: 0px;
+  }
+}

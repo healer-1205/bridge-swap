@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next"
 import { Tokens, svgIcons, Gifs } from "../../assets"
 import { Benefit } from "../../components/Benefit"
 import { Faq } from "../../components/Faq"
+import { Support } from "../../components/Support"
 import "./Home.scss"
 
 export const Home: React.FC = () => {
@@ -122,6 +123,7 @@ export const Home: React.FC = () => {
       </Container>
       <Benefit />
       <Faq />
+      <Support />
     </div>
   )
 }

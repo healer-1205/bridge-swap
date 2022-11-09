@@ -22,7 +22,9 @@
 		"limitless-exchange": "Échange illimité",
 		"limitless-exchange-description": "Vous pouvez commencer à partir de moins de 2 $ et échanger autant de crypto que vous le souhaitez - il n'y a pas de limite supérieure.",
 		"save-money": "Économiser de l'argent",
-		"save-money-description": "Meilleurs taux de change et commissions minimales."
+		"save-money-description": "Meilleurs taux de change et commissions minimales.",
+		"get-in-touch": "Entrer en contact",
+		"submit": "Soumettre"
 	},
 	"faq": {
 		"faq1-question": "Quelle est mon adresse d'envoi et mon adresse de réception ?",
