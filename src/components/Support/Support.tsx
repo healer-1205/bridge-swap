@@ -15,27 +15,25 @@ export const Support: React.FC = () => {
           </Col>
         </Row>
         <Row className="responsive-padding">
-          <form>
-            <Col sm={12} md={8}>
-              <Row className="pt-20">
-                <Col>
-                  <input type="email" name="email" required className="support-input" placeholder="enter your email" />
-                </Col>
-              </Row>
-              <Row className="pt-20">
-                <Col>
-                  <textarea name="support" rows={5} className="support-area"></textarea>
-                </Col>
-              </Row>
-              <Row className="pt-20">
-                <Col>
-                  <button type="submit" className="support-button pt-20">
-                    Submit
-                  </button>
-                </Col>
-              </Row>
-            </Col>
-          </form>
+          <Col sm={12} md={8}>
+            <Row className="pt-20">
+              <Col>
+                <input type="email" name="email" required className="support-input" placeholder="enter your email" />
+              </Col>
+            </Row>
+            <Row className="pt-20">
+              <Col>
+                <textarea name="support" rows={5} className="support-area"></textarea>
+              </Col>
+            </Row>
+            <Row className="pt-20">
+              <Col>
+                <button type="submit" className="support-button pt-20">
+                  Submit
+                </button>
+              </Col>
+            </Row>
+          </Col>
           <Col sm={12} md={4}>
             <img src={Images.GetInTouch} alt="GetInTouch" className="w-100 d-md-block d-none" />
           </Col>
