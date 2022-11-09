@@ -25,6 +25,10 @@ export const Header: React.FC = () => {
       name: "FAQ",
       link: "#faq",
     },
+    {
+      name: "Support",
+      link: "#support",
+    },
   ]
 
   return (

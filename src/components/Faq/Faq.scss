@@ -11,4 +11,20 @@
       color: aquamarine;
     }
   }
+
+  .accordion {
+    background-color: rgba($color: #ffffff, $alpha: 0.2);
+    --bs-accordion-bg: none;
+    --bs-accordion-color: #ffffff;
+    --bs-accordion-btn-color: #ffffff;
+  }
+
+  .accordion-button {
+    font-size: 1.25rem;
+  }
+
+  .accordion-button:not(.collapsed) {
+    background-color: inherit;
+    color: #ffffff;
+  }
 }

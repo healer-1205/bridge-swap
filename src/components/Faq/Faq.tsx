@@ -1,5 +1,5 @@
 import React from "react"
-import { Col, Container, Row } from "react-bootstrap"
+import { Col, Container, Row, Accordion } from "react-bootstrap"
 import { useTranslation } from "react-i18next"
 import "./Faq.scss"
 
@@ -14,23 +14,21 @@ export const Faq: React.FC = () => {
           </Col>
         </Row>
         <Row className="pt-20">
-          <Col sm={12} md={4} className="pt-20">
-            <div className="faq__box">
-              <h5>{t("faq.faq1-question")}</h5>
-              <p>{t("faq.faq1-answer")}</p>
-            </div>
-          </Col>
-          <Col sm={12} md={4} className="pt-20">
-            <div className="faq__box">
-              <h5>{t("faq.faq2-question")}</h5>
-              <p>{t("faq.faq2-answer")}</p>
-            </div>
-          </Col>
-          <Col sm={12} md={4} className="pt-20">
-            <div className="faq__box">
-              <h5>{t("faq.faq3-question")}</h5>
-              <p>{t("faq.faq3-question")}</p>
-            </div>
+          <Col>
+            <Accordion>
+              <Accordion.Item eventKey="0">
+                <Accordion.Header>{t("faq.faq1-question")}</Accordion.Header>
+                <Accordion.Body>{t("faq.faq1-answer")}</Accordion.Body>
+              </Accordion.Item>
+              <Accordion.Item eventKey="1">
+                <Accordion.Header>{t("faq.faq2-question")}</Accordion.Header>
+                <Accordion.Body>{t("faq.faq2-answer")}</Accordion.Body>
+              </Accordion.Item>
+              <Accordion.Item eventKey="2">
+                <Accordion.Header>{t("faq.faq3-question")}</Accordion.Header>
+                <Accordion.Body>{t("faq.faq3-answer")}</Accordion.Body>
+              </Accordion.Item>
+            </Accordion>
           </Col>
         </Row>
       </Container>
