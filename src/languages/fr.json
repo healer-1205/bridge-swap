@@ -32,7 +32,8 @@
 		"swapping": "Échange",
 		"sending": "Envoi en cours",
 		"receive-wallet": "Adresse du portefeuille où vous recevrez",
-		"deposit-wallet": "Adresse de portefeuille pour déposer votre jeton"
+		"deposit-wallet": "Adresse de portefeuille pour déposer votre jeton",
+		"back-to-home": "Retour à la page d'accueil"
 	},
 	"faq": {
 		"faq1-question": "Quelle est mon adresse d'envoi et mon adresse de réception ?",

@@ -32,7 +32,8 @@
 		"swapping": "Intercambio",
 		"sending": "Enviando",
 		"receive-wallet": "Dirección de billetera donde recibirás",
-		"deposit-wallet": "Dirección de billetera para depositar su token"
+		"deposit-wallet": "Dirección de billetera para depositar su token",
+		"back-to-home": "Volver a la página de inicio"
 	},
 	"faq": {
 		"faq1-question": "¿Cuál es mi dirección de envío y mi dirección de recepción?",

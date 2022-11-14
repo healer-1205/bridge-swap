@@ -31,6 +31,7 @@ export const Swap: React.FC = () => {
               <input type="text" placeholder="Enter your wallet address" />
               <p className="pt-40">{t("swap.deposit-wallet")}</p>
               <input type="text" placeholder="Enter your wallet address" readOnly />
+              <button className="custom_button mt-20">{t("swap.back-to-home")}</button>
             </div>
           </Col>
         </Row>

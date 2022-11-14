@@ -32,7 +32,8 @@
 		"swapping": "交换",
 		"sending": "发送",
 		"receive-wallet": "您将收到的电子钱包地址",
-		"deposit-wallet": "用于存放您的代币的钱包地址"
+		"deposit-wallet": "用于存放您的代币的钱包地址",
+		"back-to-home": "返回首页"
 	},
 	"faq": {
 		"faq1-question": "我的发送地址和接收地址是什么？",

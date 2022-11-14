@@ -32,7 +32,8 @@
 		"swapping": "Swapping",
 		"sending": "Sending",
 		"receive-wallet": "Wallet address where you will receive to",
-		"deposit-wallet": "Wallet address for depositing your token"
+		"deposit-wallet": "Wallet address for depositing your token",
+		"back-to-home": "Back to Homepage"
 	},
 	"faq": {
 		"faq1-question": "What is my sending address and my receiving address?",
