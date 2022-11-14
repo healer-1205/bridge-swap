@@ -56,18 +56,18 @@ export const Header: React.FC = () => {
             })}
             <li>
               <Link to="/" className="cool-link">
-                <img src={svgIcons.videoIcon} width="30" alt="discord" />
+                <img src={svgIcons.videoIcon} width="30" alt="video" />
               </Link>
             </li>
             <li>
-              <Link to="/" className="cool-link">
+              <a href="https://discord.com" className="cool-link" target="_blank" rel="noreferrer">
                 <img src={svgIcons.discordIcon} width="30" alt="discord" />
-              </Link>
+              </a>
             </li>
             <li>
-              <Link to="/" className="cool-link">
+              <a href="https://twitter.com" className="cool-link" target="_blank" rel="noreferrer">
                 <img src={svgIcons.twitterIcon} width="30" alt="twitter" />
-              </Link>
+              </a>
             </li>
             <li>{/* <button className="select-btn">SELECT WALLET</button> */}</li>
           </ul>
