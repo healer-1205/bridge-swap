@@ -41,12 +41,35 @@ export const Home: React.FC = () => {
   }, [])
 
   const [sendAmount, setSendAmount] = useState<number>(0)
-  const [isMinimumError, setIsMinimumError] = useState(false)
+  const [isMinimumError, setIsMinimumError] = useState(true)
   useEffect(() => {
     if (selectedSendCurrency) {
       sendAmount >= +selectedSendCurrency.swapMinimum ? setIsMinimumError(false) : setIsMinimumError(true)
     }
   }, [sendAmount, selectedSendCurrency])
+  useEffect(() => {
+    if (!isMinimumError) {
+      const params = {
+        from: {
+          ticker: selectedSendCurrency?.ticker,
+          network: selectedSendCurrency?.network,
+        },
+        to: {
+          ticker: selectedReceiveCurrency?.ticker,
+          network: selectedReceiveCurrency?.network,
+        },
+        amount: sendAmount.toString(),
+      }
+      axios
+        .post("https://titanex.io/api/quoteSwap", params)
+        .then((res) => {
+          console.log(res.data)
+        })
+        .catch((err) => {
+          console.log(err)
+        })
+    }
+  }, [isMinimumError, selectedSendCurrency, selectedReceiveCurrency, sendAmount])
 
   const [sendSearchInput, setSendSearchInput] = useState("")
   const [receiveSearchInput, setReceiveSearchInput] = useState("")
@@ -237,7 +260,11 @@ export const Home: React.FC = () => {
               </Row>
               <Row>
                 <Col>
-                  <input type="text" placeholder="Enter your wallet address" className="addressInput mt-20" />
+                  <input
+                    type="text"
+                    placeholder="Enter your wallet address where you will send from"
+                    className="addressInput mt-20"
+                  />
                 </Col>
               </Row>
               <Row>
