@@ -9,24 +9,59 @@ import { Faq } from "../../components/Faq"
 import { Support } from "../../components/Support"
 import "./Home.scss"
 
+type CurrencyInfo = {
+  ticker: string
+  name: string
+  icon: string
+  network: string
+  addressRegex: string
+  swapMinimum: string
+}
+
 export const Home: React.FC = () => {
   const [isSendOpen, setIsSendOpen] = useState(false)
   const [isReceiveOpen, setIsReceiveOpen] = useState(false)
-  const [isMinimumError, setIsMinimumError] = useState(false)
 
-  const [currencies, setCurrencies] = useState([])
-  const [selectedSendCurrency, setSelectedSendCurrency] = useState()
-  const [selectedReceiveCurrency, setSelectedReceiveCurrency] = useState()
+  const [currencies, setCurrencies] = useState<CurrencyInfo[]>([])
+  const [sendCurrencies, setSendCurrencies] = useState<CurrencyInfo[]>([])
+  const [receiveCurrencies, setReceiveCurrencies] = useState<CurrencyInfo[]>([])
+  const [selectedSendCurrency, setSelectedSendCurrency] = useState<CurrencyInfo>()
+  const [selectedReceiveCurrency, setSelectedReceiveCurrency] = useState<CurrencyInfo>()
   useEffect(() => {
     axios
       .get("https://titanex.io/api/coinInfo")
       .then((res) => {
         setCurrencies(res.data)
+        setSendCurrencies(res.data)
+        setReceiveCurrencies(res.data)
         setSelectedSendCurrency(res.data[7])
         setSelectedReceiveCurrency(res.data[8])
       })
       .catch(console.error)
   }, [])
+
+  const [sendAmount, setSendAmount] = useState<number>(0)
+  const [isMinimumError, setIsMinimumError] = useState(false)
+  useEffect(() => {
+    if (selectedSendCurrency) {
+      sendAmount >= +selectedSendCurrency.swapMinimum ? setIsMinimumError(false) : setIsMinimumError(true)
+    }
+  }, [sendAmount, selectedSendCurrency])
+
+  const [sendSearchInput, setSendSearchInput] = useState("")
+  const [receiveSearchInput, setReceiveSearchInput] = useState("")
+  useEffect(() => {
+    if (currencies) {
+      const result = currencies.filter((currency) => currency.ticker.includes(sendSearchInput))
+      setSendCurrencies(result)
+    }
+  }, [sendSearchInput, currencies])
+  useEffect(() => {
+    if (currencies) {
+      const result = currencies.filter((currency) => currency.ticker.includes(receiveSearchInput))
+      setReceiveCurrencies(result)
+    }
+  }, [receiveSearchInput, currencies])
 
   const { t } = useTranslation("translation")
   return (
@@ -53,7 +88,13 @@ export const Home: React.FC = () => {
                 <Col>
                   <p className="text-white">{t("homepage.your-send")}</p>
                   <div className="swapBox__exchangeInput d-flex align-items-center">
-                    <input type="number" placeholder="0" />
+                    <input
+                      type="number"
+                      placeholder="0"
+                      onChange={(e) => {
+                        setSendAmount(+e.target.value)
+                      }}
+                    />
                     <div
                       className="swapBox__exchangeInput__dropdown"
                       onMouseEnter={(e) => {
@@ -68,10 +109,16 @@ export const Home: React.FC = () => {
                       <div className={isSendOpen ? "dropdown_content" : "dropdown_content d-none"}>
                         <div className="exchange_search">
                           <img src={svgIcons.Search} alt="Search" />
-                          <input type="text" placeholder="Enter token name" />
+                          <input
+                            type="text"
+                            placeholder="Enter token name"
+                            onChange={(e) => {
+                              setSendSearchInput(e.target.value.toUpperCase())
+                            }}
+                          />
                         </div>
                         <div className="exchange_options">
-                          {currencies.map((currency, index) => (
+                          {sendCurrencies.map((currency, index) => (
                             <div
                               className="currency_list align-items-center"
                               key={index}
@@ -82,31 +129,38 @@ export const Home: React.FC = () => {
                               }}
                             >
                               <div className="d-flex align-items-center">
-                                <img width="41" height="41" alt="tokenImg" src={currency["icon"]} className="mr-10" />
+                                <img width="41" height="41" alt="tokenImg" src={currency.icon} className="mr-10" />
                                 <h6 className="mb-0">
-                                  {currency["ticker"]} <span>{currency["network"]}</span>
+                                  {currency.ticker} <span>{currency.network}</span>
                                 </h6>
                               </div>
-                              <h6 className="mb-0">{currency["name"]}</h6>
+                              <h6 className="mb-0">{currency.name}</h6>
                             </div>
                           ))}
                         </div>
                       </div>
                       <img src={svgIcons.DownArrow} alt="DownArrow" className="downArrow" />
                       <div className="swapBox__exchangeInput__dropdown__selected">
-                        <img src={selectedSendCurrency && selectedSendCurrency["icon"]} alt="Token" />
+                        <img src={selectedSendCurrency && selectedSendCurrency.icon} alt="Token" />
                         <div className="d-flex flex-column">
-                          <h6>{selectedSendCurrency && selectedSendCurrency["ticker"]}</h6>
-                          <span>{selectedSendCurrency && selectedSendCurrency["network"]}</span>
+                          <h6>{selectedSendCurrency && selectedSendCurrency.ticker}</h6>
+                          <span>{selectedSendCurrency && selectedSendCurrency.network}</span>
                         </div>
                       </div>
                     </div>
                   </div>
                   {isMinimumError && (
-                    <p className="text-danger d-flex align-items-center">
+                    <span className="text-danger d-flex align-items-center">
                       <img src={svgIcons.Error} alt="Error" className="mr-10" />
-                      <span>Minimum {selectedSendCurrency && selectedSendCurrency["ticker"]}</span>
-                    </p>
+                      <span>
+                        Minimum{" "}
+                        {selectedSendCurrency && (
+                          <>
+                            {selectedSendCurrency.swapMinimum}&nbsp;{selectedSendCurrency.ticker}
+                          </>
+                        )}
+                      </span>
+                    </span>
                   )}
                 </Col>
                 <Col lg={1} className="px-0" style={{ position: "relative" }}>
@@ -139,10 +193,16 @@ export const Home: React.FC = () => {
                       <div className={isReceiveOpen ? "dropdown_content" : "dropdown_content d-none"}>
                         <div className="exchange_search">
                           <img src={svgIcons.Search} alt="Search" />
-                          <input type="text" placeholder="Enter token name" />
+                          <input
+                            type="text"
+                            placeholder="Enter token name"
+                            onChange={(e) => {
+                              setReceiveSearchInput(e.target.value.toUpperCase())
+                            }}
+                          />
                         </div>
                         <div className="exchange_options">
-                          {currencies.map((currency, index) => (
+                          {receiveCurrencies.map((currency, index) => (
                             <div
                               className="currency_list align-items-center"
                               key={index}
@@ -153,22 +213,22 @@ export const Home: React.FC = () => {
                               }}
                             >
                               <div className="d-flex align-items-center">
-                                <img width="41" height="41" alt="tokenImg" src={currency["icon"]} className="mr-10" />
+                                <img width="41" height="41" alt="tokenImg" src={currency.icon} className="mr-10" />
                                 <h6 className="mb-0">
-                                  {currency["ticker"]} <span>{currency["network"]}</span>
+                                  {currency.ticker} <span>{currency.network}</span>
                                 </h6>
                               </div>
-                              <h6 className="mb-0">{currency["name"]}</h6>
+                              <h6 className="mb-0">{currency.name}</h6>
                             </div>
                           ))}
                         </div>
                       </div>
                       <img src={svgIcons.DownArrow} alt="DownArrow" className="downArrow" />
                       <div className="swapBox__exchangeInput__dropdown__selected">
-                        <img src={selectedReceiveCurrency && selectedReceiveCurrency["icon"]} alt="Token" />
+                        <img src={selectedReceiveCurrency && selectedReceiveCurrency.icon} alt="Token" />
                         <div className="d-flex flex-column">
-                          <h6>{selectedReceiveCurrency && selectedReceiveCurrency["ticker"]}</h6>
-                          <span>{selectedReceiveCurrency && selectedReceiveCurrency["network"]}</span>
+                          <h6>{selectedReceiveCurrency && selectedReceiveCurrency.ticker}</h6>
+                          <span>{selectedReceiveCurrency && selectedReceiveCurrency.network}</span>
                         </div>
                       </div>
                     </div>
