@@ -103,7 +103,16 @@ export const Home: React.FC = () => {
                   </div>
                 </Col>
                 <Col lg={1} className="px-0" style={{ position: "relative" }}>
-                  <img src={svgIcons.Swap} alt="Swap" className="swapImage" />
+                  <img
+                    src={svgIcons.Swap}
+                    alt="Swap"
+                    className="swapImage"
+                    onClick={(e) => {
+                      e.preventDefault()
+                      setSelectedSendCurrency(selectedReceiveCurrency)
+                      setSelectedReceiveCurrency(selectedSendCurrency)
+                    }}
+                  />
                 </Col>
                 <Col>
                   <p className="text-white">{t("homepage.your-receive")}</p>
