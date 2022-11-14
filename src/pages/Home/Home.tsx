@@ -1,6 +1,8 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { Col, Container, Row } from "react-bootstrap"
 import { useTranslation } from "react-i18next"
+import axios from "axios"
+import config from "../../config"
 import { Tokens, svgIcons, Gifs } from "../../assets"
 import { Benefit } from "../../components/Benefit"
 import { Faq } from "../../components/Faq"
@@ -10,6 +12,15 @@ import "./Home.scss"
 export const Home: React.FC = () => {
   const [isSendOpen, setIsSendOpen] = useState(false)
   const [isReceiveOpen, setIsReceiveOpen] = useState(false)
+
+  const [currencies, setCurrencies] = useState([])
+  useEffect(() => {
+    axios
+      .get("https://titanex.io/api/coinInfo")
+      .then((res) => setCurrencies(res.data))
+      .catch(console.error)
+  }, [])
+
   const { t } = useTranslation("translation")
   return (
     <div className="home">
@@ -47,12 +58,24 @@ export const Home: React.FC = () => {
                         setIsSendOpen(false)
                       }}
                     >
-                      <div className={isSendOpen ? "send_dropdown_content" : "send_dropdown_content d-none"}>
+                      <div className={isSendOpen ? "dropdown_content" : "dropdown_content d-none"}>
                         <div className="exchange_search">
                           <img src={svgIcons.Search} alt="Search" />
                           <input type="text" placeholder="Enter token name" />
                         </div>
-                        <div className="exchange_options"></div>
+                        <div className="exchange_options">
+                          {currencies.map((currency, index) => (
+                            <div className="currency_list align-items-center" key={index}>
+                              <div className="d-flex align-items-center">
+                                <img width="41" height="41" alt="tokenImg" src={currency["icon"]} className="mr-10" />
+                                <h6 className="mb-0">
+                                  {currency["ticker"]} <span>{currency["network"]}</span>
+                                </h6>
+                              </div>
+                              <h6 className="mb-0">{currency["name"]}</h6>
+                            </div>
+                          ))}
+                        </div>
                       </div>
                       <img src={svgIcons.DownArrow} alt="DownArrow" className="downArrow" />
                       <div className="swapBox__exchangeInput__dropdown__selected">
@@ -83,12 +106,24 @@ export const Home: React.FC = () => {
                         setIsReceiveOpen(false)
                       }}
                     >
-                      <div className={isReceiveOpen ? "receive_dropdown_content" : "receive_dropdown_content d-none"}>
+                      <div className={isReceiveOpen ? "dropdown_content" : "dropdown_content d-none"}>
                         <div className="exchange_search">
                           <img src={svgIcons.Search} alt="Search" />
                           <input type="text" placeholder="Enter token name" />
                         </div>
-                        <div className="exchange_options"></div>
+                        <div className="exchange_options">
+                          {currencies.map((currency, index) => (
+                            <div className="currency_list align-items-center" key={index}>
+                              <div className="d-flex align-items-center">
+                                <img width="41" height="41" alt="tokenImg" src={currency["icon"]} className="mr-10" />
+                                <h6 className="mb-0">
+                                  {currency["ticker"]} <span>{currency["network"]}</span>
+                                </h6>
+                              </div>
+                              <h6 className="mb-0">{currency["name"]}</h6>
+                            </div>
+                          ))}
+                        </div>
                       </div>
                       <img src={svgIcons.DownArrow} alt="DownArrow" className="downArrow" />
                       <div className="swapBox__exchangeInput__dropdown__selected">

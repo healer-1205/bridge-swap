@@ -38,7 +38,6 @@
     "eject": "react-scripts eject",
     "contract-typings": "typechain --target=ethers-v5 --out-dir src/contracts src/abis/*.json"
   },
-  "proxy": "http://localhost:5000",
   "eslintConfig": {
     "extends": [
       "react-app",

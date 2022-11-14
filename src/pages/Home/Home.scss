@@ -125,66 +125,7 @@
       padding-left: 4px;
       position: relative;
 
-      .send_dropdown_content {
-        position: absolute;
-        z-index: 1;
-        height: 400px;
-        width: auto;
-        overflow: hidden;
-        padding: 40px 20px;
-        border-radius: 10px;
-        backdrop-filter: blur(40px);
-        left: 0;
-        bottom: 5px;
-        transform: translateY(100%);
-        transition: 0.5s;
-
-        .exchange_search {
-          position: relative;
-
-          img {
-            position: absolute;
-            right: 42px;
-            top: 50%;
-            transform: translateY(-50%);
-          }
-
-          input {
-            background: hsla(0, 0%, 100%, 0.1);
-            border: 1px solid hsla(0, 0%, 100%, 0.1);
-            border-radius: 10px;
-            color: #ffffff;
-            font-size: 16px;
-            font-weight: 500;
-            line-height: 180%;
-            outline: none;
-            padding: 10px 20px;
-            position: sticky;
-            width: calc(100% - 27px);
-            top: -40px;
-          }
-        }
-
-        .exchange_options {
-          width: 300px;
-          height: 390px;
-          margin-top: 20px;
-          overflow-y: scroll;
-          padding-right: 25px;
-          &::-webkit-scrollbar {
-            position: absolute;
-            right: 20px;
-            width: 4px;
-          }
-          &::-webkit-scrollbar-track {
-            background: hsla(0, 0%, 100%, 0.1);
-            border-radius: 40px;
-            margin-bottom: 8px;
-          }
-        }
-      }
-
-      .receive_dropdown_content {
+      .dropdown_content {
         position: absolute;
         z-index: 1;
         height: 400px;
@@ -225,7 +166,7 @@
         }
 
         .exchange_options {
-          width: 300px;
+          width: 350px;
           height: 390px;
           margin-top: 20px;
           overflow-y: scroll;
@@ -239,6 +180,25 @@
             background: hsla(0, 0%, 100%, 0.1);
             border-radius: 40px;
             margin-bottom: 8px;
+          }
+
+          .currency_list {
+            border-bottom: 1px solid hsla(0, 0%, 100%, 0.1);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0px;
+            color: #ffffff;
+
+            span {
+              background: hsla(0, 0%, 100%, 0.1);
+              border: 1px solid #7d7d7d;
+              border-radius: 35px;
+              font-weight: 500;
+              line-height: 180%;
+              margin-left: 10px;
+              padding: 1px 10px;
+            }
           }
         }
       }
