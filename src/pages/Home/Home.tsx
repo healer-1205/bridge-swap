@@ -41,12 +41,17 @@ export const Home: React.FC = () => {
   }, [])
 
   const [sendAmount, setSendAmount] = useState<number>(0)
+  const [receiveAmount, setReceiveAmount] = useState<string>("0")
   const [isMinimumError, setIsMinimumError] = useState(true)
   useEffect(() => {
     if (selectedSendCurrency) {
       sendAmount >= +selectedSendCurrency.swapMinimum ? setIsMinimumError(false) : setIsMinimumError(true)
     }
   }, [sendAmount, selectedSendCurrency])
+  const getData = async (params: any) => {
+    const res = await axios.post("https://titanex.io/api/quoteSwap", params)
+    setReceiveAmount(res.data.amount)
+  }
   useEffect(() => {
     if (!isMinimumError) {
       const params = {
@@ -60,14 +65,11 @@ export const Home: React.FC = () => {
         },
         amount: sendAmount.toString(),
       }
-      axios
-        .post("https://titanex.io/api/quoteSwap", params)
-        .then((res) => {
-          console.log(res.data)
-        })
-        .catch((err) => {
-          console.log(err)
-        })
+      console.log(params)
+
+      setInterval(() => {
+        getData(params)
+      }, 2000)
     }
   }, [isMinimumError, selectedSendCurrency, selectedReceiveCurrency, sendAmount])
 
@@ -201,7 +203,7 @@ export const Home: React.FC = () => {
                 <Col>
                   <p className="text-white">{t("homepage.your-receive")}</p>
                   <div className="swapBox__exchangeInput d-flex align-items-center">
-                    <input type="number" placeholder="0" />
+                    <input type="number" value={receiveAmount} readOnly />
                     <div
                       className="swapBox__exchangeInput__dropdown"
                       onMouseEnter={(e) => {
