@@ -71,7 +71,15 @@ export const Home: React.FC = () => {
                         </div>
                         <div className="exchange_options">
                           {currencies.map((currency, index) => (
-                            <div className="currency_list align-items-center" key={index}>
+                            <div
+                              className="currency_list align-items-center"
+                              key={index}
+                              onClick={(e) => {
+                                e.preventDefault()
+                                setSelectedSendCurrency(currency)
+                                setIsSendOpen(false)
+                              }}
+                            >
                               <div className="d-flex align-items-center">
                                 <img width="41" height="41" alt="tokenImg" src={currency["icon"]} className="mr-10" />
                                 <h6 className="mb-0">
@@ -119,7 +127,15 @@ export const Home: React.FC = () => {
                         </div>
                         <div className="exchange_options">
                           {currencies.map((currency, index) => (
-                            <div className="currency_list align-items-center" key={index}>
+                            <div
+                              className="currency_list align-items-center"
+                              key={index}
+                              onClick={(e) => {
+                                e.preventDefault()
+                                setSelectedReceiveCurrency(currency)
+                                setIsReceiveOpen(false)
+                              }}
+                            >
                               <div className="d-flex align-items-center">
                                 <img width="41" height="41" alt="tokenImg" src={currency["icon"]} className="mr-10" />
                                 <h6 className="mb-0">
