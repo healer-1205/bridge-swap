@@ -12,6 +12,7 @@ import "./Home.scss"
 export const Home: React.FC = () => {
   const [isSendOpen, setIsSendOpen] = useState(false)
   const [isReceiveOpen, setIsReceiveOpen] = useState(false)
+  const [isMinimumError, setIsMinimumError] = useState(false)
 
   const [currencies, setCurrencies] = useState([])
   const [selectedSendCurrency, setSelectedSendCurrency] = useState()
@@ -101,6 +102,12 @@ export const Home: React.FC = () => {
                       </div>
                     </div>
                   </div>
+                  {isMinimumError && (
+                    <p className="text-danger d-flex align-items-center">
+                      <img src={svgIcons.Error} alt="Error" className="mr-10" />
+                      <span>Minimum {selectedSendCurrency && selectedSendCurrency["ticker"]}</span>
+                    </p>
+                  )}
                 </Col>
                 <Col lg={1} className="px-0" style={{ position: "relative" }}>
                   <img

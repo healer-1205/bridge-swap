@@ -9,6 +9,7 @@ import TwoNumber from "./two-number-icon.svg"
 import ThreeNumber from "./three-number-icon.svg"
 import RightArrow from "./arrow-right-icon.svg"
 import DoubleCheck from "./double-check-icon.svg"
+import Error from "./error.svg"
 
 const svgIcons = {
   discordIcon,
@@ -22,6 +23,7 @@ const svgIcons = {
   ThreeNumber,
   RightArrow,
   DoubleCheck,
+  Error,
 }
 
 export default svgIcons
