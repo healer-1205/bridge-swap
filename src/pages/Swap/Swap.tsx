@@ -1,10 +1,12 @@
 import React from "react"
+import { useNavigate } from "react-router-dom"
 import { Col, Container, Row } from "react-bootstrap"
 import { useTranslation } from "react-i18next"
 import "./Swap.scss"
 
 export const Swap: React.FC = () => {
   const { t } = useTranslation("translation")
+  const navigate = useNavigate()
   return (
     <div className="swap">
       <div className="home__gradient1"></div>
@@ -31,7 +33,15 @@ export const Swap: React.FC = () => {
               <input type="text" placeholder="Enter your wallet address" />
               <p className="pt-40">{t("swap.deposit-wallet")}</p>
               <input type="text" placeholder="Enter your wallet address" readOnly />
-              <button className="custom_button mt-20">{t("swap.back-to-home")}</button>
+              <button
+                className="custom_button mt-20"
+                onClick={(e) => {
+                  e.preventDefault()
+                  navigate("/")
+                }}
+              >
+                {t("swap.back-to-home")}
+              </button>
             </div>
           </Col>
         </Row>
