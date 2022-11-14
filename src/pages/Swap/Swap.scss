@@ -1,0 +1,88 @@
+.swap {
+  background-color: var(--background-color);
+  padding: 20px 10px 20px 10px;
+  position: relative;
+  z-index: 1;
+  &__gradient1 {
+    top: auto;
+    left: auto;
+    right: 0;
+    width: 300px;
+    bottom: 10%;
+    filter: blur(100px);
+    height: 300px;
+    z-index: -1;
+    position: fixed;
+    transform: rotate(45deg);
+    border-radius: 1000px;
+    background-image: radial-gradient(36.67% 9.68% at 67.26% 8.27%, rgb(56 9 57) 0%, rgb(56 9 57) 95.78%);
+  }
+  &__gradient2 {
+    top: 5%;
+    left: auto;
+    right: 10%;
+    width: 300px;
+    bottom: auto;
+    filter: blur(100px);
+    height: 300px;
+    z-index: -1;
+    position: fixed;
+    border-radius: 1000px;
+    background-image: radial-gradient(36.67% 9.68% at 67.26% 8.27%, rgb(56 9 57) 0%, rgb(56 9 57) 95.78%);
+  }
+  &__gradient3 {
+    top: 15%;
+    left: 0;
+    right: auto;
+    width: 250px;
+    bottom: auto;
+    filter: blur(100px);
+    height: 250px;
+    opacity: 0.8;
+    z-index: -1;
+    position: fixed;
+    transform: rotate(45deg);
+    border-radius: 1000px;
+    background-image: radial-gradient(36.67% 9.68% at 67.26% 8.27%, rgb(14 42 62) 0%, rgb(28 72 103) 95.78%);
+  }
+  &__gradient4 {
+    top: auto;
+    left: 10%;
+    right: auto;
+    width: 250px;
+    bottom: 10%;
+    filter: blur(100px);
+    height: 250px;
+    opacity: 0.8;
+    z-index: -1;
+    position: fixed;
+    transform: rotate(45deg);
+    border-radius: 1000px;
+    background-image: radial-gradient(
+      36.67% 9.68% at 67.26% 8.27%,
+      rgb(42 123 135 / 48%) 0%,
+      rgb(39 121 124 / 72%) 95.78%
+    );
+  }
+
+  .box {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    font-family: "Roboto", sans-serif;
+    color: #ffffff;
+
+    input {
+      width: 100%;
+      background-color: initial;
+      border: 1px solid #34344c;
+      border-radius: 10px;
+      color: #ffffff;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 180%;
+      outline: none;
+      padding: 10px;
+    }
+  }
+}

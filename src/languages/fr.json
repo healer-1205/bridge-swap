@@ -26,6 +26,14 @@
 		"get-in-touch": "Entrer en contact",
 		"submit": "Soumettre"
 	},
+	"swap": {
+		"await-deposit": "En attente de dépôt",
+		"confirming": "Confirmation",
+		"swapping": "Échange",
+		"sending": "Envoi en cours",
+		"receive-wallet": "Adresse du portefeuille où vous recevrez",
+		"deposit-wallet": "Adresse de portefeuille pour déposer votre jeton"
+	},
 	"faq": {
 		"faq1-question": "Quelle est mon adresse d'envoi et mon adresse de réception ?",
 		"faq1-answer": "Votre adresse d'envoi est l'adresse que vous utiliserez pour envoyer votre crypto. Votre adresse de réception sera l'adresse sur laquelle vous souhaitez recevoir votre crypto.",

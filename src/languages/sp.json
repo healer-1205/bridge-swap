@@ -26,6 +26,14 @@
 		"get-in-touch": "Ponerse en contacto",
 		"submit": "Enviar"
 	},
+	"swap": {
+		"await-deposit": "En espera de depósito",
+		"confirming": "Confirmando",
+		"swapping": "Intercambio",
+		"sending": "Enviando",
+		"receive-wallet": "Dirección de billetera donde recibirás",
+		"deposit-wallet": "Dirección de billetera para depositar su token"
+	},
 	"faq": {
 		"faq1-question": "¿Cuál es mi dirección de envío y mi dirección de recepción?",
 		"faq1-answer": "Su dirección de envío es la dirección que utilizará para enviar su criptografía. Su dirección de recepción será la dirección en la que desea recibir su criptografía.",

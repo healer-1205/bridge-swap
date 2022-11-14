@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import { useNavigate } from "react-router-dom"
 import { Col, Container, Row } from "react-bootstrap"
 import { useTranslation } from "react-i18next"
 import axios from "axios"
@@ -19,6 +20,8 @@ type CurrencyInfo = {
 }
 
 export const Home: React.FC = () => {
+  const navigate = useNavigate()
+
   const [isSendOpen, setIsSendOpen] = useState(false)
   const [isReceiveOpen, setIsReceiveOpen] = useState(false)
 
@@ -272,7 +275,15 @@ export const Home: React.FC = () => {
               <Row>
                 <Col sm={0} md={2} lg={3}></Col>
                 <Col sm={12} md={8} lg={6}>
-                  <button className="custom_button mt-20">{t("homepage.swap-now")}</button>
+                  <button
+                    className="custom_button mt-20"
+                    onClick={(e) => {
+                      e.preventDefault()
+                      navigate("/swap")
+                    }}
+                  >
+                    {t("homepage.swap-now")}
+                  </button>
                 </Col>
                 <Col sm={0} md={2} lg={3}></Col>
               </Row>

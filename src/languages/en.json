@@ -26,6 +26,14 @@
 		"get-in-touch": "Get in touch",
 		"submit": "Submit"
 	},
+	"swap": {
+		"await-deposit": "Awaiting Deposit",
+		"confirming": "Confirming",
+		"swapping": "Swapping",
+		"sending": "Sending",
+		"receive-wallet": "Wallet address where you will receive to",
+		"deposit-wallet": "Wallet address for depositing your token"
+	},
 	"faq": {
 		"faq1-question": "What is my sending address and my receiving address?",
 		"faq1-answer": "Your sending address is the address that you will use to send your crypto. Your receiving address will be the address you want to receive your crypto on.",
