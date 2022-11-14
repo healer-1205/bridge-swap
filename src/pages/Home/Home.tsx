@@ -3,7 +3,7 @@ import { Col, Container, Row } from "react-bootstrap"
 import { useTranslation } from "react-i18next"
 import axios from "axios"
 import config from "../../config"
-import { Tokens, svgIcons, Gifs } from "../../assets"
+import { svgIcons, Gifs } from "../../assets"
 import { Benefit } from "../../components/Benefit"
 import { Faq } from "../../components/Faq"
 import { Support } from "../../components/Support"
@@ -14,10 +14,16 @@ export const Home: React.FC = () => {
   const [isReceiveOpen, setIsReceiveOpen] = useState(false)
 
   const [currencies, setCurrencies] = useState([])
+  const [selectedSendCurrency, setSelectedSendCurrency] = useState()
+  const [selectedReceiveCurrency, setSelectedReceiveCurrency] = useState()
   useEffect(() => {
     axios
       .get("https://titanex.io/api/coinInfo")
-      .then((res) => setCurrencies(res.data))
+      .then((res) => {
+        setCurrencies(res.data)
+        setSelectedSendCurrency(res.data[7])
+        setSelectedReceiveCurrency(res.data[8])
+      })
       .catch(console.error)
   }, [])
 
@@ -79,10 +85,10 @@ export const Home: React.FC = () => {
                       </div>
                       <img src={svgIcons.DownArrow} alt="DownArrow" className="downArrow" />
                       <div className="swapBox__exchangeInput__dropdown__selected">
-                        <img src={Tokens.BTC} alt="BTC" />
+                        <img src={selectedSendCurrency && selectedSendCurrency["icon"]} alt="Token" />
                         <div className="d-flex flex-column">
-                          <h6>BTC</h6>
-                          <span>BTC</span>
+                          <h6>{selectedSendCurrency && selectedSendCurrency["ticker"]}</h6>
+                          <span>{selectedSendCurrency && selectedSendCurrency["network"]}</span>
                         </div>
                       </div>
                     </div>
@@ -127,10 +133,10 @@ export const Home: React.FC = () => {
                       </div>
                       <img src={svgIcons.DownArrow} alt="DownArrow" className="downArrow" />
                       <div className="swapBox__exchangeInput__dropdown__selected">
-                        <img src={Tokens.ETH} alt="BTC" />
+                        <img src={selectedReceiveCurrency && selectedReceiveCurrency["icon"]} alt="Token" />
                         <div className="d-flex flex-column">
-                          <h6>ETH</h6>
-                          <span>ERC20</span>
+                          <h6>{selectedReceiveCurrency && selectedReceiveCurrency["ticker"]}</h6>
+                          <span>{selectedReceiveCurrency && selectedReceiveCurrency["network"]}</span>
                         </div>
                       </div>
                     </div>
