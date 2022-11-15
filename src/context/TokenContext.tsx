@@ -14,8 +14,8 @@ interface ITokenContext {
   receiveAddress: string
   sendAmount: number
   receiveAmount: number
-  selectedSendCurrency: ICurrencyInfo
-  selectedReceiveCurrency: ICurrencyInfo
+  selectedSendToken: ICurrencyInfo
+  selectedReceiveToken: ICurrencyInfo
   setSendWalletAddress: (param: string) => void
   setReceiveWalletAddress: (param: string) => void
   setSendTokenAmount: (param: number) => void
@@ -29,7 +29,7 @@ const defaultState = {
   receiveAddress: "",
   sendAmount: 0,
   receiveAmount: 0,
-  selectedSendCurrency: {
+  selectedSendToken: {
     ticker: "",
     name: "",
     icon: "",
@@ -37,7 +37,7 @@ const defaultState = {
     addressRegex: "",
     swapMinimum: "",
   },
-  selectedReceiveCurrency: {
+  selectedReceiveToken: {
     ticker: "",
     name: "",
     icon: "",
@@ -60,8 +60,8 @@ export const TokenProvider: FC = ({ children }) => {
   const [receiveAddress, setReceiveAddress] = useState(defaultState.sendAddress)
   const [sendAmount, setSendAmount] = useState(defaultState.sendAmount)
   const [receiveAmount, setReceiveAmount] = useState(defaultState.receiveAmount)
-  const [selectedSendCurrency, setSelectedSendCurrency] = useState(defaultState.selectedSendCurrency)
-  const [selectedReceiveCurrency, setSelectedReceiveCurrency] = useState(defaultState.selectedReceiveCurrency)
+  const [selectedSendToken, setSelectedSendCurrency] = useState(defaultState.selectedSendToken)
+  const [selectedReceiveToken, setSelectedReceiveCurrency] = useState(defaultState.selectedReceiveToken)
 
   const setSendWalletAddress = (param: string) => {
     setSendAddress(param)
@@ -89,8 +89,8 @@ export const TokenProvider: FC = ({ children }) => {
         receiveAddress,
         sendAmount,
         receiveAmount,
-        selectedSendCurrency,
-        selectedReceiveCurrency,
+        selectedSendToken,
+        selectedReceiveToken,
         setSendWalletAddress,
         setReceiveWalletAddress,
         setSendTokenAmount,

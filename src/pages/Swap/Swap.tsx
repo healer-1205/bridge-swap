@@ -10,17 +10,17 @@ export const Swap: React.FC = () => {
   const { t } = useTranslation("translation")
   const navigate = useNavigate()
   const { receiveAddress, setReceiveWalletAddress } = useContext(TokenContext)
-  const { selectedReceiveCurrency } = useContext(TokenContext)
+  const { selectedReceiveToken } = useContext(TokenContext)
 
   const [isInvalidAddress, setIsInvalidAddress] = useState(false)
 
   useEffect(() => {
-    const currencyName = selectedReceiveCurrency?.ticker.toLowerCase()
-    const chainType = selectedReceiveCurrency?.network
+    const currencyName = selectedReceiveToken?.ticker.toLowerCase()
+    const chainType = selectedReceiveToken?.network
     validate(receiveAddress, currencyName, { networkType: "prod", chainType: chainType })
       ? setIsInvalidAddress(false)
       : setIsInvalidAddress(true)
-  }, [receiveAddress, selectedReceiveCurrency])
+  }, [receiveAddress, selectedReceiveToken])
   return (
     <div className="swap">
       <div className="home__gradient1"></div>

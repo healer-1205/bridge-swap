@@ -26,6 +26,8 @@ export const Home: React.FC = () => {
   const { sendAddress, setSendWalletAddress } = useContext(TokenContext)
   const { sendAmount, setSendTokenAmount } = useContext(TokenContext)
   const { receiveAmount, setReceiveTokenAmount } = useContext(TokenContext)
+  const { setSelectedSendToken } = useContext(TokenContext)
+  const { setSelectedReceiveToken } = useContext(TokenContext)
 
   const [isSendOpen, setIsSendOpen] = useState(false)
   const [isReceiveOpen, setIsReceiveOpen] = useState(false)
@@ -51,13 +53,17 @@ export const Home: React.FC = () => {
   const [isMinimumError, setIsMinimumError] = useState(true)
   useEffect(() => {
     if (selectedSendCurrency) {
+      setSelectedSendToken(selectedSendCurrency)
       sendAmount >= +selectedSendCurrency.swapMinimum ? setIsMinimumError(false) : setIsMinimumError(true)
     }
-  }, [sendAmount, selectedSendCurrency])
-  const getData = async (params: any) => {
-    const res = await axios.post("https://titanex.io/api/quoteSwap", params)
-    setReceiveTokenAmount(res.data.amount)
-  }
+  }, [sendAmount, selectedSendCurrency, setSelectedSendToken])
+
+  useEffect(() => {
+    if (selectedReceiveCurrency) {
+      setSelectedReceiveToken(selectedReceiveCurrency)
+    }
+  }, [selectedReceiveCurrency, setSelectedReceiveToken])
+
   useEffect(() => {
     if (!isMinimumError) {
       const params = {
@@ -72,6 +78,11 @@ export const Home: React.FC = () => {
         amount: sendAmount.toString(),
       }
 
+      const getData = async (params: any) => {
+        const res = await axios.post("https://titanex.io/api/quoteSwap", params)
+        setReceiveTokenAmount(res.data.amount)
+      }
+
       const interval = setInterval(() => {
         getData(params)
       }, 1000)
@@ -80,7 +91,7 @@ export const Home: React.FC = () => {
         clearInterval(interval)
       }
     }
-  }, [isMinimumError, selectedSendCurrency, selectedReceiveCurrency, sendAmount])
+  }, [isMinimumError, selectedSendCurrency, selectedReceiveCurrency, sendAmount, setReceiveTokenAmount])
 
   const [sendSearchInput, setSendSearchInput] = useState("")
   const [receiveSearchInput, setReceiveSearchInput] = useState("")
