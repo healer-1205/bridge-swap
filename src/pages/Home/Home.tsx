@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom"
 import { Col, Container, Row } from "react-bootstrap"
 import { useTranslation } from "react-i18next"
 import axios from "axios"
+import { validate } from "crypto-address-validator-ts"
 import config from "../../config"
 import { svgIcons, Gifs } from "../../assets"
 import { Benefit } from "../../components/Benefit"
@@ -96,7 +97,15 @@ export const Home: React.FC = () => {
 
   const [isInvalidAddress, setIsInvalidAddress] = useState(false)
   const [sendAddress, setSendAddress] = useState("")
-  useEffect(() => {}, [sendAddress])
+  useEffect(() => {
+    const currencyName = selectedSendCurrency?.ticker.toLowerCase()
+    const chainType = selectedSendCurrency?.network
+    if (typeof currencyName !== "undefined" && typeof chainType !== "undefined") {
+      validate(sendAddress, currencyName, { networkType: "prod", chainType: chainType })
+        ? setIsInvalidAddress(false)
+        : setIsInvalidAddress(true)
+    }
+  }, [sendAddress, selectedSendCurrency])
 
   const { t } = useTranslation("translation")
   return (
