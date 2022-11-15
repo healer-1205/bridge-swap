@@ -74,7 +74,7 @@ export const Home: React.FC = () => {
 
       const interval = setInterval(() => {
         getData(params)
-      }, 2000)
+      }, 1000)
 
       return () => {
         clearInterval(interval)
