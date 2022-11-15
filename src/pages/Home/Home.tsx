@@ -293,7 +293,7 @@ export const Home: React.FC = () => {
                     className="custom_button mt-20"
                     onClick={(e) => {
                       e.preventDefault()
-                      navigate("/swap")
+                      !isInvalidAddress && navigate("/swap")
                     }}
                   >
                     {t("homepage.swap-now")}
