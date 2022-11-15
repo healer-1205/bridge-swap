@@ -24,7 +24,8 @@
 		"save-money": "وفر المال",
 		"save-money-description": "أفضل أسعار الصرف والحد الأدنى للعمولات.",
 		"get-in-touch": "ابقى على تواصل",
-		"submit": "يُقدِّم"
+		"submit": "يُقدِّم",
+		"invalid-address": "عنوان خاطئ"
 	},
 	"swap": {
 		"await-deposit": "في انتظار الإيداع",

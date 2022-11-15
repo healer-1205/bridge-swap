@@ -68,11 +68,14 @@ export const Home: React.FC = () => {
         },
         amount: sendAmount.toString(),
       }
-      console.log(params)
 
-      setInterval(() => {
+      const interval = setInterval(() => {
         getData(params)
       }, 2000)
+
+      return () => {
+        clearInterval(interval)
+      }
     }
   }, [isMinimumError, selectedSendCurrency, selectedReceiveCurrency, sendAmount])
 
@@ -90,6 +93,10 @@ export const Home: React.FC = () => {
       setReceiveCurrencies(result)
     }
   }, [receiveSearchInput, currencies])
+
+  const [isInvalidAddress, setIsInvalidAddress] = useState(false)
+  const [sendAddress, setSendAddress] = useState("")
+  useEffect(() => {}, [sendAddress])
 
   const { t } = useTranslation("translation")
   return (
@@ -198,8 +205,9 @@ export const Home: React.FC = () => {
                     className="swapImage"
                     onClick={(e) => {
                       e.preventDefault()
-                      setSelectedSendCurrency(selectedReceiveCurrency)
+                      const temp = selectedReceiveCurrency
                       setSelectedReceiveCurrency(selectedSendCurrency)
+                      setSelectedSendCurrency(temp)
                     }}
                   />
                 </Col>
@@ -269,8 +277,14 @@ export const Home: React.FC = () => {
                     type="text"
                     placeholder="Enter your wallet address where you will send from"
                     className="addressInput mt-20"
+                    onChange={(e) => {
+                      setSendAddress(e.target.value)
+                    }}
                   />
                 </Col>
+              </Row>
+              <Row>
+                <Col>{isInvalidAddress && <span className="text-danger">{t("homepage.invalid-address")}</span>}</Col>
               </Row>
               <Row>
                 <Col sm={0} md={2} lg={3}></Col>

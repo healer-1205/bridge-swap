@@ -24,7 +24,8 @@
 		"save-money": "Save Money",
 		"save-money-description": "Best exchange rates and minimum commissions.",
 		"get-in-touch": "Get in touch",
-		"submit": "Submit"
+		"submit": "Submit",
+		"invalid-address": "Invalid Address"
 	},
 	"swap": {
 		"await-deposit": "Awaiting Deposit",

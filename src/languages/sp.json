@@ -24,7 +24,8 @@
 		"save-money": "Ahorrar dinero",
 		"save-money-description": "Las mejores tasas de cambio y comisiones mínimas.",
 		"get-in-touch": "Ponerse en contacto",
-		"submit": "Enviar"
+		"submit": "Enviar",
+		"invalid-address": "Dirección inválida"
 	},
 	"swap": {
 		"await-deposit": "En espera de depósito",
