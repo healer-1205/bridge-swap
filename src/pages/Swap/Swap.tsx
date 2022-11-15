@@ -1,12 +1,26 @@
-import React from "react"
+import React, { useState, useEffect, useContext } from "react"
 import { useNavigate } from "react-router-dom"
 import { Col, Container, Row } from "react-bootstrap"
 import { useTranslation } from "react-i18next"
+import { validate } from "crypto-address-validator-ts"
+import { TokenContext } from "../../context/TokenContext"
 import "./Swap.scss"
 
 export const Swap: React.FC = () => {
   const { t } = useTranslation("translation")
   const navigate = useNavigate()
+  const { receiveAddress, setReceiveWalletAddress } = useContext(TokenContext)
+  const { selectedReceiveCurrency } = useContext(TokenContext)
+
+  const [isInvalidAddress, setIsInvalidAddress] = useState(false)
+
+  useEffect(() => {
+    const currencyName = selectedReceiveCurrency?.ticker.toLowerCase()
+    const chainType = selectedReceiveCurrency?.network
+    validate(receiveAddress, currencyName, { networkType: "prod", chainType: chainType })
+      ? setIsInvalidAddress(false)
+      : setIsInvalidAddress(true)
+  }, [receiveAddress, selectedReceiveCurrency])
   return (
     <div className="swap">
       <div className="home__gradient1"></div>
@@ -30,7 +44,14 @@ export const Swap: React.FC = () => {
           <Col>
             <div className="box">
               <p>{t("swap.receive-wallet")}</p>
-              <input type="text" placeholder="Enter your wallet address" />
+              <input
+                type="text"
+                placeholder="Enter your wallet address"
+                onChange={(e) => {
+                  setReceiveWalletAddress(e.target.value)
+                }}
+              />
+              {isInvalidAddress && <span className="text-danger">{t("homepage.invalid-address")}</span>}
               <p className="pt-40">{t("swap.deposit-wallet")}</p>
               <input type="text" placeholder="Enter your wallet address" readOnly />
               <button
