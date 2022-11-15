@@ -7,7 +7,7 @@ import "./Support.scss"
 export const Support: React.FC = () => {
   const { t } = useTranslation("translation")
   return (
-    <div className="support">
+    <div className="support" id="support">
       <Container>
         <Row className="pt-120">
           <Col>
