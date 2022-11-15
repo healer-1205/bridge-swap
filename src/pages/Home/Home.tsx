@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useContext } from "react"
 import { useNavigate } from "react-router-dom"
 import { Col, Container, Row } from "react-bootstrap"
 import { useTranslation } from "react-i18next"
 import axios from "axios"
 import { validate } from "crypto-address-validator-ts"
-import config from "../../config"
+import { TokenContext } from "../../context/TokenContext"
 import { svgIcons, Gifs } from "../../assets"
 import { Benefit } from "../../components/Benefit"
 import { Faq } from "../../components/Faq"
@@ -22,6 +22,10 @@ type CurrencyInfo = {
 
 export const Home: React.FC = () => {
   const navigate = useNavigate()
+
+  const { sendAddress, setSendWalletAddress } = useContext(TokenContext)
+  const { sendAmount, setSendTokenAmount } = useContext(TokenContext)
+  const { receiveAmount, setReceiveTokenAmount } = useContext(TokenContext)
 
   const [isSendOpen, setIsSendOpen] = useState(false)
   const [isReceiveOpen, setIsReceiveOpen] = useState(false)
@@ -44,8 +48,6 @@ export const Home: React.FC = () => {
       .catch(console.error)
   }, [])
 
-  const [sendAmount, setSendAmount] = useState<number>(0)
-  const [receiveAmount, setReceiveAmount] = useState<string>("0")
   const [isMinimumError, setIsMinimumError] = useState(true)
   useEffect(() => {
     if (selectedSendCurrency) {
@@ -54,7 +56,7 @@ export const Home: React.FC = () => {
   }, [sendAmount, selectedSendCurrency])
   const getData = async (params: any) => {
     const res = await axios.post("https://titanex.io/api/quoteSwap", params)
-    setReceiveAmount(res.data.amount)
+    setReceiveTokenAmount(res.data.amount)
   }
   useEffect(() => {
     if (!isMinimumError) {
@@ -96,7 +98,6 @@ export const Home: React.FC = () => {
   }, [receiveSearchInput, currencies])
 
   const [isInvalidAddress, setIsInvalidAddress] = useState(false)
-  const [sendAddress, setSendAddress] = useState("")
   useEffect(() => {
     const currencyName = selectedSendCurrency?.ticker.toLowerCase()
     const chainType = selectedSendCurrency?.network
@@ -136,7 +137,7 @@ export const Home: React.FC = () => {
                       type="number"
                       placeholder="0"
                       onChange={(e) => {
-                        setSendAmount(+e.target.value)
+                        setSendTokenAmount(+e.target.value)
                       }}
                     />
                     <div
@@ -287,7 +288,7 @@ export const Home: React.FC = () => {
                     placeholder="Enter your wallet address where you will send from"
                     className="addressInput mt-20"
                     onChange={(e) => {
-                      setSendAddress(e.target.value)
+                      setSendWalletAddress(e.target.value)
                     }}
                   />
                 </Col>
