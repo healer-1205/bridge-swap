@@ -23,7 +23,6 @@ type CurrencyInfo = {
 export const Home: React.FC = () => {
   const navigate = useNavigate()
 
-  const { sendAddress, setSendWalletAddress } = useContext(TokenContext)
   const { sendAmount, setSendTokenAmount } = useContext(TokenContext)
   const { receiveAmount, setReceiveTokenAmount } = useContext(TokenContext)
   const { setSelectedSendToken } = useContext(TokenContext)
@@ -107,17 +106,6 @@ export const Home: React.FC = () => {
       setReceiveCurrencies(result)
     }
   }, [receiveSearchInput, currencies])
-
-  const [isInvalidAddress, setIsInvalidAddress] = useState(false)
-  useEffect(() => {
-    const currencyName = selectedSendCurrency?.ticker.toLowerCase()
-    const chainType = selectedSendCurrency?.network
-    if (typeof currencyName !== "undefined" && typeof chainType !== "undefined") {
-      validate(sendAddress, currencyName, { networkType: "prod", chainType: chainType })
-        ? setIsInvalidAddress(false)
-        : setIsInvalidAddress(true)
-    }
-  }, [sendAddress, selectedSendCurrency])
 
   const { t } = useTranslation("translation")
   return (
@@ -293,28 +281,13 @@ export const Home: React.FC = () => {
                 </Col>
               </Row>
               <Row>
-                <Col>
-                  <input
-                    type="text"
-                    placeholder="Enter your wallet address where you will send from"
-                    className="addressInput mt-20"
-                    onChange={(e) => {
-                      setSendWalletAddress(e.target.value)
-                    }}
-                  />
-                </Col>
-              </Row>
-              <Row>
-                <Col>{isInvalidAddress && <span className="text-danger">{t("homepage.invalid-address")}</span>}</Col>
-              </Row>
-              <Row>
                 <Col sm={0} md={2} lg={3}></Col>
                 <Col sm={12} md={8} lg={6}>
                   <button
                     className="custom_button mt-20"
                     onClick={(e) => {
                       e.preventDefault()
-                      !isInvalidAddress && navigate("/swap")
+                      navigate("/swap")
                     }}
                   >
                     {t("homepage.swap-now")}
