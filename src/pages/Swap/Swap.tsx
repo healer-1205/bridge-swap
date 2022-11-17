@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom"
 import { Col, Container, Row } from "react-bootstrap"
 import { useTranslation } from "react-i18next"
 import { validate } from "crypto-address-validator-ts"
+import axios from "axios"
+import config from "../../config"
 import { TokenContext } from "../../context/TokenContext"
 import "./Swap.scss"
 
@@ -10,10 +12,10 @@ export const Swap: React.FC = () => {
   const { t } = useTranslation("translation")
   const navigate = useNavigate()
   const { receiveAddress, setReceiveWalletAddress } = useContext(TokenContext)
-  const { selectedReceiveToken } = useContext(TokenContext)
+  const { selectedSendToken, selectedReceiveToken } = useContext(TokenContext)
 
+  const [depositAddress, setDepositAddress] = useState<string>("")
   const [isInvalidAddress, setIsInvalidAddress] = useState(false)
-
   useEffect(() => {
     const currencyName = selectedReceiveToken?.ticker.toLowerCase()
     const chainType = selectedReceiveToken?.network
@@ -21,6 +23,20 @@ export const Swap: React.FC = () => {
       ? setIsInvalidAddress(false)
       : setIsInvalidAddress(true)
   }, [receiveAddress, selectedReceiveToken])
+
+  useEffect(() => {
+    const params = {
+      currency: selectedSendToken.ticker,
+    }
+    axios
+      .get(`${config.base_url}/api/kucoin/getDepositAddress`, { params })
+      .then((res) => {
+        setDepositAddress(res.data[0].address)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }, [selectedSendToken])
   return (
     <div className="swap">
       <div className="home__gradient1"></div>
@@ -53,7 +69,7 @@ export const Swap: React.FC = () => {
               />
               {isInvalidAddress && <span className="text-danger">{t("homepage.invalid-address")}</span>}
               <p className="pt-40">{t("swap.deposit-wallet")}</p>
-              <input type="text" placeholder="Enter your wallet address" readOnly />
+              <input type="text" value={depositAddress} readOnly />
               <button
                 className="custom_button mt-20"
                 onClick={(e) => {
