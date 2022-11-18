@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom"
 import { Col, Container, Row } from "react-bootstrap"
 import { useTranslation } from "react-i18next"
 import axios from "axios"
-import { validate } from "crypto-address-validator-ts"
+import config from "../../config"
 import { TokenContext } from "../../context/TokenContext"
 import { svgIcons, Gifs } from "../../assets"
 import { Benefit } from "../../components/Benefit"
@@ -36,9 +36,10 @@ export const Home: React.FC = () => {
   const [receiveCurrencies, setReceiveCurrencies] = useState<CurrencyInfo[]>([])
   const [selectedSendCurrency, setSelectedSendCurrency] = useState<CurrencyInfo>()
   const [selectedReceiveCurrency, setSelectedReceiveCurrency] = useState<CurrencyInfo>()
+
   useEffect(() => {
     axios
-      .get("https://titanex.io/api/coinInfo")
+      .get(`${config.base_url}/api/kucoin/getCurrencies`)
       .then((res) => {
         setCurrencies(res.data)
         setSendCurrencies(res.data)
